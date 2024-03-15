@@ -117,6 +117,7 @@
                                                 <h5><b>Kontak Penerima</b></h5>
                                             </div>
                                             <div class=" col-12">
+                                                <input type="text" name="user_id" id="user_id" value="">
                                                 <label class="form-label form-dark" for="nama_penerima">Nama</label>
                                                 <input type="nama_penerima" name="nama_penerima" id="nama_penerima" class="form-control @error ('nama_penerima') is-invalid @enderror" style="color: black" required value="{{old('nama_penerima')}}"/>
                                                 @error('nama_penerima')
