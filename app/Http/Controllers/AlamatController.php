@@ -12,4 +12,5 @@ class AlamatController extends Controller
     public function tambahAlamat(){
         return view('homepage.profile.tambahAlamat');
     }
+    
 }
