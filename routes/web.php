@@ -41,7 +41,7 @@ Route::get('/blouse', [DataController::class, 'blouse'])->name('blouse');
 Route::get('/celana', [DataController::class, 'celana'])->name('celana');
 Route::get('/rok', [DataController::class, 'rok'])->name('rok');
 
-Route::get('/detailKemeja', [DataController::class, 'detailKemeja'])->name('detailKemeja');
+Route::get('/{data:id}/detail-barang', [DataController::class, 'detailBarang']);
 
 Route::get('/checkout',[DataController::class, 'checkout'])->name('checkout');
 
@@ -49,6 +49,7 @@ Route::get('/checkout',[DataController::class, 'checkout'])->name('checkout');
 Route::get('/informasi', [DataController::class, 'informasi'])->name('informasi');
 Route::get('/alamat', [AlamatController::class, 'alamat'])->name('alamat');
 Route::get('/tambahAlamat', [AlamatController::class, 'tambahAlamat'])->name('tamabahAlamat');
+Route::post('/create-alamat', [AlamatController::class, 'createAlamat'])->name('createAlamat');
 Route::get('/pesanan', [DataController::class, 'pesanan'])->name('pesanan');
 Route::get('/lihatDetail', [DataController::class, 'lihatDetail'])->name('lihatDetail');
 Route::get('/penilaian', [DataController::class, 'penilaian'])->name('penilaian');
