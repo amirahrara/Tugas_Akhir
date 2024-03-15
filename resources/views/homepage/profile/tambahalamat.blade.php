@@ -111,13 +111,12 @@
                             <div class="card" style="padding: 20px; border-radius:15px; border-color: rgb(114, 108, 108);">
                             <h4><b>Tambah Alamat</b></h4>
                             <div class="tambah_alamat_user">
-                                    <form class="row g-3" action="#" method="post">
+                                    <form class="row g-3" action="{{ route('createAlamat') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                             <div class="col-12">
                                                 <h5><b>Kontak Penerima</b></h5>
                                             </div>
                                             <div class=" col-12">
-                                                <input type="text" name="user_id" id="user_id" value="">
                                                 <label class="form-label form-dark" for="nama_penerima">Nama</label>
                                                 <input type="nama_penerima" name="nama_penerima" id="nama_penerima" class="form-control @error ('nama_penerima') is-invalid @enderror" style="color: black" required value="{{old('nama_penerima')}}"/>
                                                 @error('nama_penerima')
@@ -185,7 +184,7 @@
                                             </div>
                                             <div class="col-12">
                                                 <label class="form-label form-dark" for="kecamatan">Jadikan alamat utama</label>
-
+                                                <input type="text" name="utama" id="utama" class="form-control @error ('kode_pos') is-invalid @enderror" style="color: black" required value="{{old ('utama')}}"/>
                                             </div>
                                             <div class="col-md-4">
                                                 <button type="submit" class="site-btn">Simpan</button>

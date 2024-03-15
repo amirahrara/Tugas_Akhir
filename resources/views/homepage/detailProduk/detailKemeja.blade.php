@@ -18,39 +18,32 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="assets/img/shop-details/kemeja2.png">
+                                    <div class="product__thumb__pic set-bg" data-setbg="/storage/{{ $data->gambar1 }}">
                                     </div>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="assets/img/shop-details/kemeja1.png">
+                                    <div class="product__thumb__pic set-bg" data-setbg="/storage/{{ $data->gambar2 }}">
                                     </div>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="assets/img/shop-details/kemeja3.png">
+                                    <div class="product__thumb__pic set-bg" data-setbg="/storage/{{ $data->gambar2 }}">
                                     </div>
                                 </a>
                             </li>
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="assets/img/shop-details/thumb-4.png">
-                                        <i class="fa fa-play"></i>
-                                    </div>
-                                </a>
-                            </li> --}}
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-9">
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="assets/img/shop-details/kemeja2.png" alt="">
+                                    <img src="/storage/{{ $data->cover_produk }}" alt="">
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            {{-- <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__pic__item">
                                     <img src="assets/img/shop-details/kemeja1.png" alt="">
                                 </div>
@@ -58,12 +51,6 @@
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__pic__item">
                                     <img src="assets/img/shop-details/kemeja3.png" alt="">
-                                </div>
-                            </div>
-                            {{-- <div class="tab-pane" id="tabs-4" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img src="img/shop-details/product-big-4.png" alt="">
-                                    <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                                 </div>
                             </div> --}}
                         </div>

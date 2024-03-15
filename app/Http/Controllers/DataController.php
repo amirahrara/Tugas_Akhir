@@ -13,8 +13,15 @@ class DataController extends Controller
         return view('homepage.index');
     }
 
+    public function detailBarang(Data $data){
+
+        return view('homepage.detailProduk.detailKemeja',[
+            'data' =>$data
+        ]);
+    }
+
     public function produk(){
-        return view('homepage.produk');
+        return view('homepage.detailProduk.detailKemeja');
     }
 
     public function keranjang(){
@@ -29,13 +36,16 @@ class DataController extends Controller
         return view('homepage.kategori.sale');
     }
     public function kemeja(){
-        $data=Data::where('kategori_id', '=', '1')->latest()->get();
+        $barang=Data::where('kategori_id', '=', '1')->latest()->get();
         return view('homepage.kategori.kemeja',[
-            'data' =>$data
+            'data' =>$barang
         ]);
     }
     public function outer(){
-        return view('homepage.kategori.outer');
+        $data=Data::where('kategori_id', '=', '1')->latest()->get();
+        return view('homepage.kategori.outer',[
+            'data' =>$data
+        ]);
     }
     public function tunik(){
         return view('homepage.kategori.tunik');
