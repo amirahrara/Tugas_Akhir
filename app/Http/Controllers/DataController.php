@@ -29,7 +29,10 @@ class DataController extends Controller
         return view('homepage.kategori.sale');
     }
     public function kemeja(){
-        return view('homepage.kategori.kemeja');
+        $data=Data::where('kategori_id', '=', '1')->latest()->get();
+        return view('homepage.kategori.kemeja',[
+            'data' =>$data
+        ]);
     }
     public function outer(){
         return view('homepage.kategori.outer');
@@ -38,10 +41,10 @@ class DataController extends Controller
         return view('homepage.kategori.tunik');
     }
     public function dress(){
-
+        $data=Data::where('kategori_id', '=', '3')->latest()->get();
         return view('homepage.kategori.dress',[
 
-            'data' =>Data::all()
+            'data' =>$data
         ]);
     }
     public function blouse(){

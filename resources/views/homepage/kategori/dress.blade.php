@@ -106,7 +106,7 @@
                             </a>
 
                             <div class="product__item__text">
-                                <h6>Sleeveles Smocked Midi Dress</h6>
+                                <h6>{{$item->nama_produk}}</h6>
                                 <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                                 <div class="rating">
                                     <i class="fa fa-star-o"></i>
@@ -115,7 +115,7 @@
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                 </div>
-                                <h5>Rp. 186.000</h5>
+                                <h5>Rp. {{$item->harga}}</h5>
                                 {{-- <div class="product__color__select">
                                     <label for="pc-25">
                                         <input type="radio" id="pc-25">

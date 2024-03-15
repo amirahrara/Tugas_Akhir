@@ -104,10 +104,11 @@
                     </div>
                 </div>
                 <div class="row">
+                    @foreach ($data as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
                             <a href="{{route('detailKemeja')}}">
-                            <div class="product__item__pic set-bg" data-setbg="assets/img/product/Kemeja7.png">
+                            <div class="product__item__pic set-bg" data-setbg="/storage/{{$item->cover_produk}}">
                             </div>
                             </a>
                                 {{-- <ul class="product__hover">
@@ -117,7 +118,7 @@
                                     <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
                                 </ul> --}}
                             <div class="product__item__text">
-                                <h6>Bell Sleeve Blouse with Tied Details</h6>
+                                <h6>{{$item->nama_produk}}</h6>
                                 <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                                 <div class="rating">
                                     <i class="fa fa-star"></i>
@@ -126,7 +127,7 @@
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                 </div>
-                                <h5>Rp. 179.000</h5>
+                                <h5>Rp. {{$item->harga}}</h5>
                                 {{-- <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -141,19 +142,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                    {{-- <div class="col-lg-4 col-md-6 col-sm-6">
                         <a href="{{route('detailKemeja')}}">
                         <div class="product__item sale">
                             <div class="product__item__pic set-bg" data-setbg="assets/img/product/Kemeja8.png">
                                 <span class="label">Sale</span>
                             </div>
                         </a>
-                                    {{-- <ul class="product__hover">
+                                    <ul class="product__hover">
                                         <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
                                         <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
                                         </li>
                                         <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                    </ul> --}}
+                                    </ul>
                             <div class="product__item__text">
                                 <h6>Oversize Kemeja Lengan Panjang</h6>
                                 <a href="#" class="add-cart">+ Tambah ke keranjang</a>
@@ -165,7 +166,7 @@
                                     <i class="fa fa-star-o"></i>
                                 </div>
                                 <h5>Rp. 200.000</h5>
-                                {{-- <div class="product__color__select">
+                                <div class="product__color__select">
                                     <label for="pc-7">
                                         <input type="radio" id="pc-7">
                                     </label>
@@ -175,7 +176,7 @@
                                     <label class="grey" for="pc-9">
                                         <input type="radio" id="pc-9">
                                     </label>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -183,14 +184,14 @@
                         <div class="product__item">
                             <a href="{{route('detailKemeja')}}">
                             <div class="product__item__pic set-bg" data-setbg="assets/img/product/kemeja9.png"></div>
-                                {{-- <ul class="product__hover">
+                                <ul class="product__hover">
                                     <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
                                     <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
                                     </li>
                                     <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul> --}}
+                                </ul>
                             </a>
-                            {{-- </div> --}}
+                            </div>
                             <div class="product__item__text">
                                 <h6>Kemeja Lengan Pendek</h6>
                                 <a href="#" class="add-cart">+ Add To Cart</a>
@@ -202,7 +203,7 @@
                                     <i class="fa fa-star-o"></i>
                                 </div>
                                 <h5>Rp. 149.000</h5>
-                                {{-- <div class="product__color__select">
+                                <div class="product__color__select">
                                     <label for="pc-10">
                                         <input type="radio" id="pc-10">
                                     </label>
@@ -212,10 +213,11 @@
                                     <label class="grey" for="pc-12">
                                         <input type="radio" id="pc-12">
                                     </label>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
+                    @endforeach
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
