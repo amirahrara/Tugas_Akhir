@@ -125,7 +125,7 @@
                                             </tr> --}}
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            {{-- <tr>
                                                 <td class="product__cart__item" style="padding-top: 5px; padding-bottom: 5px">
                                                     <div class="product__cart__item__pic">
                                                         <img src="/assets/img/product/dress1.png" alt="" style="max-width: 90px">
@@ -136,7 +136,7 @@
                                                     <a href="" class="btn btn-dark btn-sm" style="font-size: 13px; border-radius:10px; float:right">Nilai</a>
                                                 </td>
 
-                                            </tr>
+                                            </tr> --}}
                                             <tr>
                                                 <td class="product__cart__item" style="padding-top: 5px; padding-bottom: 5px">
                                                     <div class="product__cart__item__pic">
@@ -145,14 +145,14 @@
                                                     <div class="product__cart__item__text" style="padding-top: 5px">
                                                         <h6>Diagonal Textured Cap</h6>
                                                     </div>
-                                                    <a href="" class="btn btn-dark btn-sm" style="font-size: 13px; border-radius:10px; float:right">Nilai</a>
+                                                    <a href="{{route('nilai')}}" class="btn btn-dark btn-sm" style="font-size: 13px; border-radius:10px; float:right">Nilai</a>
                                                 </td>
 
                                             </tr>
 
                                         </tbody>
                                     </table>
-                                    
+
                                 </div>
                             {{-- </div> --}}
                             </div>

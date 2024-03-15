@@ -52,6 +52,7 @@ Route::get('/tambahAlamat', [AlamatController::class, 'tambahAlamat'])->name('ta
 Route::get('/pesanan', [DataController::class, 'pesanan'])->name('pesanan');
 Route::get('/lihatDetail', [DataController::class, 'lihatDetail'])->name('lihatDetail');
 Route::get('/penilaian', [DataController::class, 'penilaian'])->name('penilaian');
+Route::get('/nilai', [DataController::class, 'nilai'])->name('nilai');
 
 Route::get('/tambah', [DataController::class, 'Tambahdata']);
 Route::post('/tambah-data', [DataController::class, 'createdata']);

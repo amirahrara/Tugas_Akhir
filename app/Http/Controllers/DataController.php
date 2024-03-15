@@ -75,6 +75,10 @@ class DataController extends Controller
     public function penilaian(){
         return view('homepage.profile.penilaian');
     }
+    public function nilai(){
+        return view('homepage.profile.nilai');
+    }
+
 
     public function Tambahdata(){
 
