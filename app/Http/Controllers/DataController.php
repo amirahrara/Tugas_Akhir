@@ -21,7 +21,11 @@ class DataController extends Controller
     }
 
     public function produk(){
-        return view('homepage.detailProduk.detailKemeja');
+        return view('homepage.produk');
+    }
+
+    public function tentangkami(){
+        return view('homepage.tentangkami');
     }
 
     public function keranjang(){
@@ -32,8 +36,15 @@ class DataController extends Controller
         return view('homepage.favorit');
     }
 
+    public function kontak(){
+        return view('homepage.kontak');
+    }
+
     public function sale(){
-        return view('homepage.kategori.sale');
+        // $data=Data::where('kategori_id', '=', '5')->latest()->get();
+        return view('homepage.kategori.sale'
+            // 'data' =>$data
+        );
     }
     public function kemeja(){
         $barang=Data::where('kategori_id', '=', '1')->latest()->get();
@@ -42,13 +53,16 @@ class DataController extends Controller
         ]);
     }
     public function outer(){
-        $data=Data::where('kategori_id', '=', '1')->latest()->get();
+        $data=Data::where('kategori_id', '=', '2')->latest()->get();
         return view('homepage.kategori.outer',[
             'data' =>$data
         ]);
     }
     public function tunik(){
-        return view('homepage.kategori.tunik');
+        $data=Data::where('kategori_id', '=', '4')->latest()->get();
+        return view('homepage.kategori.tunik',[
+            'data' =>$data
+        ]);
     }
     public function dress(){
         $data=Data::where('kategori_id', '=', '3')->latest()->get();
@@ -58,17 +72,26 @@ class DataController extends Controller
         ]);
     }
     public function blouse(){
-        return view('homepage.kategori.blouse');
+        $data=Data::where('kategori_id', '=', '5')->latest()->get();
+        return view('homepage.kategori.blouse',[
+            'data' =>$data
+        ]);
     }
     public function celana(){
-        return view('homepage.kategori.celana');
+        $data=Data::where('kategori_id', '=', '6')->latest()->get();
+        return view('homepage.kategori.celana',[
+            'data' =>$data
+        ]);
     }
     public function rok(){
-        return view('homepage.kategori.rok');
+        $data=Data::where('kategori_id', '=', '7')->latest()->get();
+        return view('homepage.kategori.rok',[
+            'data' =>$data
+        ]);
     }
-    public function detailKemeja(){
-        return view('homepage.detailProduk.detailKemeja');
-    }
+    // public function detailKemeja(){
+    //     return view('homepage.detailProduk.detailKemeja');
+    // }
     public function checkout(){
         return view('homepage.checkout');
     }

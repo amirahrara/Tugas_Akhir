@@ -118,24 +118,15 @@
                         <h4><b>Daftar Alamat</b></h4>
                             <div class="alamat_user_akun">
                                 <form class="row g-3">
-                                    @foreach ($alamat as $item) 
+                                    @foreach ($alamat as $item)
                                     <div class="col-12">
                                         <div class="card" style="border-radius:10px; border-color: rgb(114, 108, 108);">
                                             <li><b>{{ $item->nama_penerima }} | {{ $item->no_penerima }}</b></li>
-                                            <li>{{ $item->alamat }} {{ $item->provinsi }} {{ $item->kota }}</li>
+                                            <li>{{ $item->alamat }}, {{ $item->kota }}, {{ $item->provinsi }}, {{ $item->kode_pos }} </li>
                                         </div>
                                     </div>
                                     @endforeach
-                                    {{-- <div class="col-12">
-                                        <div class="card" style="border-radius:10px; border-color: rgb(114, 108, 108);">
-                                            <li><b>Nama | No.Telpon</b></li>
-                                            <li>alamat lengkap</li>
-                                        </div>
-                                    </div> --}}
-                                    <div class="col-4">
-
-                                        <button type="submit" class="site-btn">Simpan</button>
-                                    </div>
+                                   
                                 </form>
                             </div>
                             </div>

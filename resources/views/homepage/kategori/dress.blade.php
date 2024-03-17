@@ -100,7 +100,7 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
-                            <a href="{{route('keranjang')}}">
+                            <a href="/{{ $item->id }}/detail-barang">
                                 <div class="product__item__pic set-bg" data-setbg="/storage/{{$item->cover_produk}}">
                                 </div>
                             </a>

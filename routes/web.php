@@ -27,10 +27,14 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/lupaPassword', [LoginController::class, 'lupaPassword'])->name('lupaPassword');
+
 Route::get('/', [DataController::class, 'index'])->name('index');
 Route::get('/produk', [DataController::class, 'produk'])->name('produk');
+Route::get('/tentangkami', [DataController::class, 'tentangkami'])->name('tentangkami');
 Route::get('/keranjang', [DataController::class, 'keranjang'])->name('keranjang');
 Route::get('/favorit', [DataController::class, 'favorit'])->name('favorit');
+Route::get('/kontak', [DataController::class, 'kontak'])->name('kontak');
 
 Route::get('/sale', [DataController::class, 'sale'])->name('sale');
 Route::get('/kemeja', [DataController::class, 'kemeja'])->name('kemeja');

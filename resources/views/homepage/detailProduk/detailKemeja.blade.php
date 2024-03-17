@@ -17,6 +17,7 @@
                     <div class="col-lg-3 col-md-3">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
+
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
                                     <div class="product__thumb__pic set-bg" data-setbg="/storage/{{ $data->gambar1 }}">
                                     </div>
@@ -30,7 +31,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="/storage/{{ $data->gambar2 }}">
+                                    <div class="product__thumb__pic set-bg" data-setbg="/storage/{{ $data->gambar3 }}">
                                     </div>
                                 </a>
                             </li>
@@ -40,19 +41,19 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="/storage/{{ $data->cover_produk }}" alt="">
+                                    <img src="/storage/{{ $data->gambar1 }}" alt="">
                                 </div>
                             </div>
-                            {{-- <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="assets/img/shop-details/kemeja1.png" alt="">
+                                    <img src="/storage/{{ $data->gambar2 }}" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="assets/img/shop-details/kemeja3.png" alt="">
+                                    <img src="/storage/{{ $data->gambar3 }}" alt="">
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,17 +64,17 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="product__details__text">
-                            <h4>Bell Sleeve Blouse with Tied Details</h4>
+                            <h4>{{$data->nama_produk}}</h4>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star"></i>
                                 <span> - 5 Reviews</span>
                             </div>
-                            <h3><span>Rp. 270.000</span> Rp. 179.000 </h3>
-                            <p>Kemeja lengan panjang dengan detail terikat pada ujung lengan memberikan tampilan yang lucu.</p>
+                            <h3><span>Rp. {{$data->sale}}</span> Rp. {{$data->harga}}</h3>
+                            <p>{{$data->caption}}</p>
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
@@ -134,9 +135,8 @@
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
                                             <h5>Info Produk</h5>
-                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos soluta fugit aliquam assumenda et expedita molestias commodi ullam quo, natus quidem architecto asperiores voluptas laborum optio iste aut. Qui distinctio tempora natus harum, ipsum debitis possimus vero non illum alias ad rem provident quod reprehenderit quam mollitia sint soluta ea.</p>
-                                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla cum nemo voluptas libero quis labore tenetur rem nisi, eum unde id amet commodi dolorum fuga quam eaque laboriosam modi ad! Doloremque inventore illo repellat dolores necessitatibus, veritatis iure vero itaque tempore unde harum aspernatur quod ducimus incidunt nihil ad expedita.</p>
-                                        </div>
+                                            <p>{{$data->deskripsi}}</p>
+                                            </div>
                                         <div class="product__details__tab__content__item">
                                             <h5>Panduan Ukuran</h5>
                                             <ul>
@@ -146,10 +146,10 @@
                                             </ul>
                                             <br>
                                             <ul>
-                                                <li>S: LD82-86 X LP64-68 x LPI92-96</li>
-                                                <li>M: LD86-90 X LP68-72 x LPI96-100</li>
-                                                <li>L: LD90-94 X LP72-76 x LPI100-104</li>
-                                                <li>XL: LD94-98 X LP76-80 x LPI104-108</li>
+                                                <li style="list-style: none">S: LD82-86 X LP64-68 x LPI92-96</li>
+                                                <li style="list-style: none">M: LD86-90 X LP68-72 x LPI96-100</li>
+                                                <li style="list-style: none">L: LD90-94 X LP72-76 x LPI100-104</li>
+                                                <li style="list-style: none">XL: LD94-98 X LP76-80 x LPI104-108</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -185,11 +185,7 @@
                                 <div class="tab-pane" id="tabs-7" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
-                                            <p>Bahan: Rayon</p>
-                                            <p>Berkerah</p>
-                                            <p>Lengan Panjang</p>
-                                            <p>Motif: Polos</p>
-                                            <p>Warna: Light Blue</p>
+                                            <p>{{$data->spesifikasi}}</p>
                                         </div>
 
                                     </div>

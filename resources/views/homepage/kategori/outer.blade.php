@@ -96,88 +96,29 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <a href="{{route('keranjang')}}">
-                                <div class="product__item__pic set-bg" data-setbg="assets/img/product/outer1.png">
-                                </div>
-                            </a>
-                                {{-- <ul class="product__hover">
-                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul> --}}
-                            <div class="product__item__text">
-                                <h6>Pink Cardigan Chain</h6>
-                                <a href="#" class="add-cart">+ Tambah ke keranjang</a>
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                                <h5>Rp.170.000</h5>
-                                {{-- <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div> --}}
-                            </div>
-                        </div>
-                    </div>
+                    @foreach ($data as $item)
+
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item sale">
-                            <a href="{{route('keranjang')}}">
-                                <div class="product__item__pic set-bg" data-setbg="assets/img/product/outer4.png">
+                            <a href="/{{ $item->id }}/detail-barang">
+                                <div class="product__item__pic set-bg" data-setbg="/storage/{{$item->cover_produk}}">
+
                                     <span class="label">Sale</span>
                                 </div>
                             </a>
-                                {{-- <ul class="product__hover">
-                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul>
-                            </div> --}}
+
                             <div class="product__item__text">
-                                <h6>Knit Vest</h6>
+                                <h6>{{$item->nama_produk}}</h6>
                                 <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                                 <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                 </div>
-                                <h5>Rp. 100.000</h5>
-                                {{-- <div class="product__color__select">
-                                    <label for="pc-16">
-                                        <input type="radio" id="pc-16">
-                                    </label>
-                                    <label class="active black" for="pc-17">
-                                        <input type="radio" id="pc-17">
-                                    </label>
-                                    <label class="grey" for="pc-18">
-                                        <input type="radio" id="pc-18">
-                                    </label>
-                                </div> --}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <a href="{{route('keranjang')}}">
-                                <div class="product__item__pic set-bg" data-setbg="assets/img/product/outer7.png">
-                                </div>
-                            </a>
+                                <h5>Rp. {{$item->harga}}</h5>
+
                                 {{-- <ul class="product__hover">
                                     <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
                                     <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
@@ -210,6 +151,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
                 <div class="row">
                     <div class="col-lg-12">

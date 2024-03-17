@@ -80,12 +80,12 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__left">
-                                <p>Showing 1–12 of 126 results</p>
+                                <p>Tampilkan 1–12 dari 126 produk</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
-                                <p>Sort by Price:</p>
+                                <p>Sortir Harga:</p>
                                 <select>
                                     <option value="">Tidak ada</option>
                                     <option value="">Rendah ke Tinggi</option>

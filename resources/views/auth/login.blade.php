@@ -53,11 +53,11 @@
                              </div>
                        </div>
                    </div>
-                   <p><a href="#" class="text-white-50">Lupa kata sandi? / </a><a href="/register" class="text-white-50">Buat akun</a></p>
+                   <a href="/lupaPassword" style="color: white">Lupa kata sandi? / </a><a href="/register" style="color: white">Buat akun</a>
 
 
                    <center>
-                       <button type="submit" class="btn btn-light">Masuk</button>
+                       <button type="submit" class="btn btn-light mt-3">Masuk</button>
                    </center>
 
                    {{-- <p class="small"><a class="text-black-50" href="/lupaPassword">Lupa

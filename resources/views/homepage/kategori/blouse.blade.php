@@ -80,12 +80,12 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__left">
-                                <p>Showing 1–12 of 126 results</p>
+                                <p>Tampilkan 1–12 dari 126 produk</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
-                                <p>Sort by Price:</p>
+                                <p>Sortir Harga:</p>
                                 <select>
                                     <option value="">Tidak ada</option>
                                     <option value="">Rendah ke Tinggi</option>
@@ -96,29 +96,29 @@
                     </div>
                 </div>
                 <div class="row">
+                    @foreach ($data as $item)
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item sale">
-                            <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-6.jpg">
-                                <span class="label">Sale</span>
-                                <ul class="product__hover">
-                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul>
-                            </div>
+                            <a href="/{{ $item->id }}/detail-barang">
+                                <div class="product__item__pic set-bg" data-setbg="/storage/{{$item->cover_produk}}">
+
+                                    <span class="label">Sale</span>
+                                </div>
+                            </a>
+
                             <div class="product__item__text">
-                                <h6>Ankle Boots</h6>
-                                <a href="#" class="add-cart">+ Add To Cart</a>
+                                <h6>{{$item->nama_produk}}</h6>
+                                <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                                 <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                 </div>
-                                <h5>$98.49</h5>
-                                <div class="product__color__select">
+                                <h5>Rp. {{$item->harga}}</h5>
+
+                                {{-- <div class="product__color__select">
                                     <label for="pc-16">
                                         <input type="radio" id="pc-16">
                                     </label>
@@ -128,80 +128,11 @@
                                     <label class="grey" for="pc-18">
                                         <input type="radio" id="pc-18">
                                     </label>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-7.jpg">
-                                <ul class="product__hover">
-                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__item__text">
-                                <h6>T-shirt Contrast Pocket</h6>
-                                <a href="#" class="add-cart">+ Add To Cart</a>
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                                <h5>$49.66</h5>
-                                <div class="product__color__select">
-                                    <label for="pc-19">
-                                        <input type="radio" id="pc-19">
-                                    </label>
-                                    <label class="active black" for="pc-20">
-                                        <input type="radio" id="pc-20">
-                                    </label>
-                                    <label class="grey" for="pc-21">
-                                        <input type="radio" id="pc-21">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-8.jpg">
-                                <ul class="product__hover">
-                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Basic Flowing Scarf</h6>
-                                <a href="#" class="add-cart">+ Add To Cart</a>
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                                <h5>$26.28</h5>
-                                <div class="product__color__select">
-                                    <label for="pc-22">
-                                        <input type="radio" id="pc-22">
-                                    </label>
-                                    <label class="active black" for="pc-23">
-                                        <input type="radio" id="pc-23">
-                                    </label>
-                                    <label class="grey" for="pc-24">
-                                        <input type="radio" id="pc-24">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
