@@ -51,6 +51,8 @@ Route::get('/checkout',[DataController::class, 'checkout'])->name('checkout');
 
 //profile
 Route::get('/informasi', [DataController::class, 'informasi'])->name('informasi');
+Route::post('/edit/informasi', [DataController::class, 'informasi'])->name('informasi');
+
 Route::get('/alamat', [AlamatController::class, 'alamat'])->name('alamat');
 Route::get('/tambahAlamat', [AlamatController::class, 'tambahAlamat'])->name('tamabahAlamat');
 Route::post('/create-alamat', [AlamatController::class, 'createAlamat'])->name('createAlamat');

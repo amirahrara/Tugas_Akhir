@@ -31,6 +31,7 @@ class AlamatController extends Controller
             'provinsi' => 'required',
             'kota' => 'required',
             'kecamatan' => 'required',
+            'kelurahan' => 'required',
             'kode_pos' => 'required',
             'utama' => ''
 

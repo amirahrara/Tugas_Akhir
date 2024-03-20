@@ -111,9 +111,8 @@
                         <div class="info__user">
                             <h4><b>Informasi Akun</b></h4>
                             <div class="info_user_akun">
-                                <form class="row g-3" action="/register" method="post">
+                                <form class="row g-3" action="/edit/informasi" method="post" enctype="multipart/form-data">
                                     @csrf
-
                                         <div class=" col-md-6">
                                             <label class="form-label form-dark" for="nama_depan">Nama Depan</label>
                                             <input type="nama_depan" name="nama_depan" id="nama_depan" class="form-control" style="color: black" required value="{{auth()->user()->nama_depan}}"/>

@@ -51,8 +51,8 @@
                             <input type="password" name="password" id="password" data-toogle="password" class="form-control" required/>
                             <div class="input-group-append">
                                 <span class="input-group-text" onclick="password_show_hide();">
-                                    <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
-                                    <i class="fas fa-eye" id="show_eye"></i>
+                                    <i class="fas fa-eye d-none" id="show_eye"></i>
+                                    <i class="fas fa-eye-slash" id="hide_eye"></i>
                                 </span>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-12">
                         <label class="form-label form-dark" for="tgl_lahir">Tanggal Lahir</label>
-                        <input type="tgl_lahir" name="tgl_lahir" id="tgl_lahir" class="form-control @error ('tgl_lahir') is-invalid @enderror" placeholder="contoh: hh/bb/tttt" autofocus required value="{{ old('tgl_lahir') }}"/>
+                        <input type="date" name="tgl_lahir" id="tgl_lahir" class="form-control @error ('tgl_lahir') is-invalid @enderror" placeholder="contoh: hh/bb/tttt" autofocus required value="{{ old('tgl_lahir') }}"/>
                         @error('tgl_lahir')
                              <div class="invalid-feedback">
                              {{ $message }}
@@ -95,7 +95,7 @@
     </div>
 
 </section>
-<script src="/js/hidenpsw.js"></script>
+<script src="/assets/js/hidenpsw.js"></script>
 {{-- <script>
     // prevent deleting +62
     document.getElementById("no_telp").addEventListener("keydown", function(event) {

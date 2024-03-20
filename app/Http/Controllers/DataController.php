@@ -21,7 +21,11 @@ class DataController extends Controller
     }
 
     public function produk(){
-        return view('homepage.produk');
+        $data=Data::all();
+        return view('homepage.produk',[
+            'data'=>$data
+        ]);
+
     }
 
     public function tentangkami(){
@@ -47,44 +51,44 @@ class DataController extends Controller
         );
     }
     public function kemeja(){
-        $barang=Data::where('kategori_id', '=', '1')->latest()->get();
+        $barang=Data::where('kategori_id', '=', '3')->latest()->get();
         return view('homepage.kategori.kemeja',[
             'data' =>$barang
         ]);
     }
     public function outer(){
-        $data=Data::where('kategori_id', '=', '2')->latest()->get();
+        $data=Data::where('kategori_id', '=', '4')->latest()->get();
         return view('homepage.kategori.outer',[
             'data' =>$data
         ]);
     }
     public function tunik(){
-        $data=Data::where('kategori_id', '=', '4')->latest()->get();
+        $data=Data::where('kategori_id', '=', '6')->latest()->get();
         return view('homepage.kategori.tunik',[
             'data' =>$data
         ]);
     }
     public function dress(){
-        $data=Data::where('kategori_id', '=', '3')->latest()->get();
+        $data=Data::where('kategori_id', '=', '5')->latest()->get();
         return view('homepage.kategori.dress',[
 
             'data' =>$data
         ]);
     }
     public function blouse(){
-        $data=Data::where('kategori_id', '=', '5')->latest()->get();
+        $data=Data::where('kategori_id', '=', '7')->latest()->get();
         return view('homepage.kategori.blouse',[
             'data' =>$data
         ]);
     }
     public function celana(){
-        $data=Data::where('kategori_id', '=', '6')->latest()->get();
+        $data=Data::where('kategori_id', '=', '8')->latest()->get();
         return view('homepage.kategori.celana',[
             'data' =>$data
         ]);
     }
     public function rok(){
-        $data=Data::where('kategori_id', '=', '7')->latest()->get();
+        $data=Data::where('kategori_id', '=', '9')->latest()->get();
         return view('homepage.kategori.rok',[
             'data' =>$data
         ]);
@@ -98,6 +102,23 @@ class DataController extends Controller
     public function informasi(){
         return view('homepage.profile.informasi');
     }
+
+    public function editInformasi(User $user, Request $request){
+
+        $rules = [
+            'nama_depan'=>'required|max:255',
+            'nama_belakang'=>'required|max:255',
+            'no_telp'=>'required|max:255',
+            'tgl_lahir'=>'required|max:255'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        dd($validatedData);
+        Data::where('id',$user->auth()->user()->id)->update($validatedData);
+        return redirect('/informasi');
+    }
+
     public function pesanan(){
         return view('homepage.profile.pesanan');
     }

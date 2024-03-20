@@ -28,7 +28,7 @@
     {{-- <div class="card-body"> --}}
         <div class="tambah__alamat">
             <div class="card" style="padding: 20px; border-radius:15px; border-color: rgb(114, 108, 108);">
-            <h4><b>Tambah Alamat</b></h4>
+            <h4><b>Tambah Produk</b></h4>
             <div class="tambah_alamat_user">
                     <form class="row g-3" action="/tambah-data" method="post" enctype="multipart/form-data">
                         @csrf

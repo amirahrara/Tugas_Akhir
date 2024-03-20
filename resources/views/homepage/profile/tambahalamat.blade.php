@@ -174,6 +174,15 @@
                                                 @enderror
                                             </div>
                                             <div class="col-12">
+                                                <label class="form-label form-dark" for="kelurahan">Kelurahan</label>
+                                                <input type="kelurahan" placeholder="contoh: Kel.Desa Sidodadi" name="kelurahan" id="kelurahan" class="form-control @error ('kelurahan') is-invalid @enderror" style="color: black" required value="{{old ('kelurahan')}}"/>
+                                                @error('kelurahan')
+                                                <div class="invalid-feedback">
+                                                {{ $message }}
+                                                </div>
+                                                @enderror
+                                            </div>
+                                            <div class="col-12">
                                                 <label class="form-label form-dark" for="kode_pos">Kode Pos</label>
                                                 <input type="kode_pos" placeholder="contoh: 11111" name="kode_pos" id="kode_pos" class="form-control @error ('kode_pos') is-invalid @enderror" style="color: black" required value="{{old ('kode_pos')}}"/>
                                                 @error('kode_pos')

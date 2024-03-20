@@ -19,6 +19,13 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        Kategori::create([
+            'kategori' => 'sale'
+        ]);
+
+        Kategori::create([
+            'kategori' => 'terbaru'
+        ]);
 
         Kategori::create([
             'kategori' => 'kemeja'
