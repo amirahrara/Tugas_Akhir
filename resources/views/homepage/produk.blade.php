@@ -95,19 +95,21 @@
                     </div>
                 </div>
                 <div class="row">
+                    @foreach ($data as $item)
+
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-2.jpg">
-                                <ul class="product__hover">
-                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul>
-                            </div>
+                        <div class="product__item sale">
+                            <a href="/{{ $item->id }}/detail-barang">
+                                <div class="product__item__pic set-bg" data-setbg="/storage/{{$item->cover_produk}}">
+                                    @if (!empty($item->sale))
+                                    <span class="label">Sale</span>
+                                    @endif
+                                </div>
+                            </a>
+
                             <div class="product__item__text">
-                                <h6>Piqué Biker Jacket</h6>
-                                <a href="#" class="add-cart">+ Add To Cart</a>
+                                <h6>{{$item->nama_produk}}</h6>
+                                <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                                 <div class="rating">
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
@@ -115,21 +117,22 @@
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                 </div>
-                                <h5>$67.24</h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
+                                <h5>Rp. {{$item->harga}}</h5>
+                                {{-- <div class="product__color__select">
+                                    <label for="pc-25">
+                                        <input type="radio" id="pc-25">
                                     </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
+                                    <label class="active black" for="pc-26">
+                                        <input type="radio" id="pc-26">
                                     </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
+                                    <label class="grey" for="pc-27">
+                                        <input type="radio" id="pc-27">
                                     </label>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     {{-- <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item sale">
                             <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-3.jpg">

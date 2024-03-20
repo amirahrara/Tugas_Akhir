@@ -152,7 +152,7 @@ class DataController extends Controller
             'gambar2' => 'image|file|max:2048',
             'gambar3' => 'image|file|max:2048',
             'harga' => '',
-            'sale' => '',
+            'sale' => 'nullable',
             'deskripsi' => 'required',
             'spesifikasi' => 'required',
             'ukuran' => '',

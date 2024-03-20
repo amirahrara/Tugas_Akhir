@@ -73,7 +73,11 @@
                                 <i class="fa fa-star"></i>
                                 <span> - 5 Reviews</span>
                             </div>
-                            <h3><span>Rp. {{$data->sale}}</span> Rp. {{$data->harga}}</h3>
+                            @if (empty($data->sale))
+                            <h3>Rp. {{$data->harga}}</h3>
+                            @else
+                            <h3><span>Rp. {{$data->harga}}</span> Rp. {{$data->sale}}</h3>
+                            @endif
                             <p>{{$data->caption}}</p>
                             <div class="product__details__option">
                                 <div class="product__details__option__size">

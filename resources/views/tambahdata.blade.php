@@ -98,12 +98,8 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label form-dark" for="sale">Sale</label>
-                                <input type="sale" name="sale" id="sale" class="form-control @error ('sale') is-invalid @enderror" style="color: black" required value="{{old ('sale')}}"/>
-                                @error('sale')
-                                <div class="invalid-feedback">
-                                {{ $message }}
-                                </div>
-                                @enderror
+                                <input type="sale" name="sale" id="sale" class="form-control" style="color: black" required value="{{old ('sale')}}"/>
+
                             </div><div class="col-12">
                                 <label class="form-label form-dark" for="deskripsi">Deskripsi</label>
                                 {{-- <input type="deskripsi" name="deskripsi" id="deskripsi" class="form-control @error ('deskripsi') is-invalid @enderror" style="color: black" required value="{{old ('deskripsi')}}"/> --}}
