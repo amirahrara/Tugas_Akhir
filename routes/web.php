@@ -27,6 +27,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
+
+
 Route::get('/lupaPassword', [LoginController::class, 'lupaPassword'])->name('lupaPassword');
 
 Route::get('/', [DataController::class, 'index'])->name('index');
@@ -51,7 +53,8 @@ Route::get('/checkout',[DataController::class, 'checkout'])->name('checkout');
 
 //profile
 Route::get('/informasi', [DataController::class, 'informasi'])->name('informasi');
-Route::post('/edit/informasi', [DataController::class, 'informasi'])->name('informasi');
+Route::post('/edit/informasi', [DataController::class, 'editInformasi'])->name('edit-informasi');
+// Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/alamat', [AlamatController::class, 'alamat'])->name('alamat');
 Route::get('/tambahAlamat', [AlamatController::class, 'tambahAlamat'])->name('tamabahAlamat');

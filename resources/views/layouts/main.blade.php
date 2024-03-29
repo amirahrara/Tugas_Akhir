@@ -121,7 +121,7 @@
 <body>
 
 
-    <div class="wrapper">
+    {{-- <div class="wrapper"> --}}
         {{-- <h1>Test</h1> --}}
 
         <div id="maskContainer">
@@ -245,7 +245,7 @@
             </footer>
         </div>
         <div class="mask"></div>
-    </div>
+    {{-- </div> --}}
 
 
     <!-- Js Plugins -->

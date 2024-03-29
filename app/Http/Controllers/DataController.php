@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Kategori;
 use App\Models\Data;
+use App\Models\User;
+use App\Models\Kategori;
+use Illuminate\Http\Request;
 
 class DataController extends Controller
 {
@@ -114,10 +115,13 @@ class DataController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        dd($validatedData);
-        Data::where('id',$user->auth()->user()->id)->update($validatedData);
+        // dd($validatedData);
+        // Data::where('id',$user->auth()->user()->id)->update($validatedData);
+        User::where('id', auth()->user()->id)->update($validatedData);
         return redirect('/informasi');
     }
+
+
 
     public function pesanan(){
         return view('homepage.profile.pesanan');
