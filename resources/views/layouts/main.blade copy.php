@@ -45,14 +45,15 @@
 
 
 
-        /* .tooltip {
+        .tooltip {
             position: absolute;
             background-color: black;
             color: white;
             padding: 5px;
             border-radius: 5px;
             pointer-events: none;
-        } */
+            /* Agar tooltip tidak mengganggu event mouse */
+        }
 
 
 
@@ -94,11 +95,11 @@
 <body>
 
 
-    <div class="wrappers" id="wrappers">
-        {{-- <img src="{{ asset('assets/img/banner/banner-2.jpg')}}" alt="">
+    <div class="wrappers" id="wrappers" style="background-color: rgba(0, 0, 0, 0.753); width:100%; height:150%; z-index:9999;">
+        <img src="{{ asset('assets/img/banner/banner-2.jpg')}}" alt="">
         <div id="tooltips" class="tooltips" style="background-color: red;"></div>
-        <div id="tooltip" class="tooltip" style="display: none;"></div> --}}
-        <div id="wrapper">
+        <div id="tooltip" class="tooltip" style="display: none;"></div>
+        {{-- <div id="wrapper">
             <div id="maskContainer">
                 <div id="preloder">
                     <div class="loader"></div>
@@ -222,7 +223,7 @@
                     </div>
                 </footer>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 
@@ -252,38 +253,38 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $(document).ready(function() {
 
-            // const Mask = document.querySelector(".mask");
-            // const MaskHalfWidth = Mask.offsetWidth / 2;
-            // const MaskHalfHeight = Mask.offsetHeight / 2;
+            const Mask = document.querySelector(".mask");
+            const MaskHalfWidth = Mask.offsetWidth / 2;
+            const MaskHalfHeight = Mask.offsetHeight / 2;
 
-            // window.addEventListener("mousemove", (e) => {
-            //     const mouseX = e.pageX;
-            //     const mouseY = e.pageY;
+            window.addEventListener("mousemove", (e) => {
+                const mouseX = e.pageX;
+                const mouseY = e.pageY;
 
-            //     let maskX = mouseX - MaskHalfWidth;
-            //     let maskY = mouseY - MaskHalfHeight;
+                let maskX = mouseX - MaskHalfWidth;
+                let maskY = mouseY - MaskHalfHeight;
 
-            //     if (maskX < 0) {
-            //         maskX = 0;
-            //     } else if (maskX > window.innerWidth - Mask.offsetWidth) {
-            //         maskX = window.innerWidth - Mask.offsetWidth;
-            //     }
+                if (maskX < 0) {
+                    maskX = 0;
+                } else if (maskX > window.innerWidth - Mask.offsetWidth) {
+                    maskX = window.innerWidth - Mask.offsetWidth;
+                }
 
-            //     if (maskY < 0) {
-            //         maskY = 0;
-            //     } else if (maskY > window.innerHeight - Mask.offsetHeight) {
-            //         maskY = window.innerHeight - Mask.offsetHeight;
-            //     }
+                if (maskY < 0) {
+                    maskY = 0;
+                } else if (maskY > window.innerHeight - Mask.offsetHeight) {
+                    maskY = window.innerHeight - Mask.offsetHeight;
+                }
 
-            //     Mask.style.top = maskY + "px";
-            //     Mask.style.left = maskX + "px";
-            // });
+                Mask.style.top = maskY + "px";
+                Mask.style.left = maskX + "px";
+            });
 
 
-            // localStorage.setItem('flag_mask', 'false');
+            localStorage.setItem('flag_mask', 'false');
 
 
             $("#buttonAcs").click(function() {
@@ -450,9 +451,9 @@
 
 
         });
-    </script>
+    </script> --}}
 
-    {{-- <script>
+    <script>
         $(document).ready(function() {
 
             // Ambil elemen target
@@ -493,7 +494,7 @@
                 tooltip.style.display = 'none';
             });
         });
-    </script> --}}
+    </script>
 
 </body>
 

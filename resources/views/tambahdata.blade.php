@@ -98,7 +98,7 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label form-dark" for="sale">Sale</label>
-                                <input type="sale" name="sale" id="sale" class="form-control" style="color: black" required value="{{old ('sale')}}"/>
+                                <input type="sale" name="sale" id="sale" class="form-control" style="color: black" value="{{old ('sale')}}"/>
 
                             </div><div class="col-12">
                                 <label class="form-label form-dark" for="deskripsi">Deskripsi</label>

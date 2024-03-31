@@ -1,11 +1,73 @@
 @extends('layouts.main')
 
 @section('content')
+<style>
+    /* .hero__items{
+    position: absolute;
+
+    display: flex;
+    transition: 1s;
+}
+ .hero__slider .owl-carousel ul{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+} */
+.custom-cursor {
+  width: 100vw; /* Lebar sama dengan viewport */
+  height: 100vh; /* Tinggi sama dengan viewport */
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+        /* Background gelap */
+        .dark-background {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 33.33%, transparent 33.33%, transparent 66.67%, rgba(0, 0, 0, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%); /* Gradient gelap dengan opacity 0.7 di bagian atas dan bawah */
+            pointer-events: none; /* Memungkinkan interaksi dengan elemen di bawahnya */
+            z-index: 9999; /* Di bawah transparent-box */
+            overflow: hidden; /* Sembunyikan overflow agar elemen ::after tidak terlihat di luar batas */
+        }
 
 
+</style>
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
+    {{-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/assets/img/pamflet-4.png" class="d-block w-100" alt="...">
+
+          </div>
+          <div class="carousel-item">
+            <img src="/assets/img/hero/hero-2.jpg" class="d-block w-100" alt="...">
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div> --}}
     <section class="hero">
         <div class="hero__slider owl-carousel">
             <div class="hero__items set-bg" data-setbg="/assets/img/pamflet-4.png" >
@@ -13,17 +75,12 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-9 col-md-8">
                             <div class="hero__text">
-                                <h6 style="font-size: 25px; color: white;">Toko Fashion Wanita</h6>
+                                <h6 style="font-size: 25px; color: white;">Fashion Wanita</h6>
                                 <h2 style="font-size: 55px; color: white;">BUTIK ORLIN COLLECTION</h2>
                                 <p style="font-size: 20px; color: white;">A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                     commitment to exceptional quality.</p>
                                 <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -39,18 +96,15 @@
                                 <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                     commitment to exceptional quality.</p>
                                 <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
     </section>
     <!-- Hero Section End -->
 
@@ -369,5 +423,96 @@
             </form>
         </div>
     </div>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
+    {{-- <script>
+        $(document).ready(function(){
+            var owl = $('hero__slider').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: false,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                nav: false,
+                dots: false
+            });
 
+            $('hero__prev').click(function() {
+                owl.trigger('prev.owl.carousel');
+            });
+
+            $('hero__next').click(function() {
+                owl.trigger('next.owl.carousel');
+            });
+
+            $('hero__play').click(function() {
+                owl.trigger('play.owl.autoplay', [5000]);
+            });
+
+            $('hero__stop').click(function() {
+                owl.trigger('stop.owl.autoplay');
+            });
+        });
+    </script> --}}
     @endsection
+
+    {{-- <script>
+        $(document).ready(function(){
+            $('.hero__items').each(function() {
+                $(this).owlCarousel({
+                    items: 1,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000, // 5 seconds
+                    autoplayHoverPause: true
+                });
+            });
+        });
+    </script> --}}
+    {{-- <script>
+        let start= 0;
+        otomatis();
+
+        function otomatis(){
+            const sliders = document.querySelectorAll(".hero__items");
+            for (let i= 0; i<sliders.length; i++){
+                sliders[i].style.display= "none";
+
+            }
+            if(start>=sliders.length){
+                start = 0;
+            }
+            sliders[start],style.display= "block";
+            console.log("slide ke" +start);
+            start++;
+            setTimeout(otomatis, 2000);
+        }
+    </script> --}}
+
+    {{-- <div class="custom-cursor"></div> --}}
+    <div class="dark-background">
+        <!-- Div baru untuk strip dinamis -->
+        {{-- <div class="dynamic-strip"></div> --}}
+    </div>
+    {{-- <div class="transparent-box"></div> <!-- Lapisan kotak transparan --> --}}
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var darkBackground = document.querySelector('.dark-background');
+            var mouseY = 0;
+            var transparentPercentage = 50;
+
+            document.addEventListener("mousemove", function(event) {
+                mouseY = event.clientY;
+                var totalHeight = window.innerHeight;
+                transparentPercentage = (mouseY / totalHeight) * 100;
+
+                darkBackground.style.background = `
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) ${transparentPercentage}%, transparent ${transparentPercentage}%, transparent ${transparentPercentage + 25}%, rgba(0, 0, 0, 0.7) ${transparentPercentage + 2}%, rgba(0, 0, 0, 0.7) 100%)`;
+
+            });
+
+        });
+    </script>

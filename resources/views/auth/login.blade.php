@@ -33,7 +33,7 @@
                    @csrf
                    <div class="form-group">
                        <label class="form-label form-dark" for="email">Email</label>
-                   <input type="email" name="email" id="email" class="form-control @error ('email') is-invalid @enderror" placeholder="contoh: email@gmail.com" autofocus required value="{{ old('email') }}"/>
+                   <input type="email" name="email" id="email" class="form-control @error ('email') is-invalid @enderror" placeholder="contoh: email@gmail.com"/>
                    @error('email')
                             <div class="invalid-feedback">
                             {{ $message }}

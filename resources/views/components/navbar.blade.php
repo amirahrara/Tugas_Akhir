@@ -20,7 +20,7 @@
                                     {{-- <li><hr class="dropdown-divider"></li> --}}
                                     <form action="/logout" method="post">
                                     @csrf
-                                    <button type="submit" class="dropdown-item" style="font-size: 13px; letter-spacing: 2px; text-transform: uppercase;">Keluar</button>
+                                    <button type="submit" class="dropdown-item" style="font-size: 13px; letter-spacing: 2px; text-transform: uppercase;"><i class="fas fa-sign-out-alt"></i>Keluar</button>
                                 </form>
                                 </ul>
                             </div>
@@ -45,7 +45,7 @@
                     @else
                     <div class="header__top__right">
                         <div class="header__top__links">
-                            <a href="{{route('login')}}">Masuk</a>
+                            <a href="{{route('login')}}"><i class="fas fa-user"></i> Masuk</a>
                         </div>
                     </div>
                     @endauth
