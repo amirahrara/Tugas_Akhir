@@ -1501,6 +1501,9 @@ ol {
 /*---------------------
   Shop
 -----------------------*/
+.shop-details {
+    padding-bottom: 55px;
+}
 
 .product__details__pic {
 	text-align: center;
@@ -3590,7 +3593,7 @@ ol {
 		font-size: 13px;
 		text-transform: uppercase;
 		letter-spacing: 2px;
-		margin-right: 16px;
+		/* margin-right: 16px; */
 		display: inline-block;
 		font-weight: 600;
 	}
@@ -3822,6 +3825,7 @@ ol {
 	.hero__social {
 		margin-top: 180px;
 	}
+    
 }
 
 /* Small Device = 320px */

@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <a class="list-group-item disabled" style="margin-bottom: 20px; " aria-disabled="true">
-                        <img src="/assets/img/icon/maleuser.png" style="height:60px;" alt=""><span><b>Amirah</b> <br>nama@gmail.com</span></a>
+                        <img src="/assets/img/icon/maleuser.png" style="height:60px;" alt=""><span><b>{{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}</b><br>&emsp; {{auth()->user()->email}}</span></a>
                     <div class="list-group">
                         <a href="{{route('informasi')}}" class="list-group-item" >
                             <img src="/assets/img/icon/customer.png" style="height:60px;" alt="">
@@ -114,22 +114,27 @@
                 <div class="col-lg-6">
                     <div class="alamat__user">
                         <div class="card" style="padding: 20px; border-radius:15px; border-color: rgb(114, 108, 108);">
-                        <a href="{{route('tamabahAlamat')}}"><span style="float: right">Tambah alamat</span></a>
-                        <h4><b>Daftar Alamat</b></h4>
+                            <h4><b>Daftar Alamat</b></h4>
+                            <a href="{{route('tamabahAlamat')}}"  class="mb-3"><span style="float: right;"><b>Tambah alamat</b></span></a>
                             <div class="alamat_user_akun">
                                 <form class="row g-3">
                                     @foreach ($alamat as $item)
                                     <div class="col-12">
                                         <div class="card" style="border-radius:10px; border-color: rgb(114, 108, 108);">
                                             <li><b>{{ $item->nama_penerima }} | {{ $item->no_penerima }}</b></li>
-                                            <li>{{ $item->alamat }}, {{ $item->kota }}, {{ $item->provinsi }}, {{ $item->kode_pos }} </li>
+                                            <li>{{ $item->alamat }}, {{ $item->kota }}, {{ $item->provinsi }}, {{ $item->kode_pos }} <span><a href="" style="float:right; margin-right: 20px">Hapus</a></span></li>
+
+                                            <div class="form-check form-switch" style="position: relative; text-align: right;  margin-bottom:20px; margin-right:20px">
+                                                <input class="form-check-input" style="width: 40px; height: 18px;" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                                <label class="form-check-label" for="flexSwitchCheckDefault" style="position: absolute; bottom: 0; right: 0; margin-right: 50px;"><b>Jadikan Alamat Utama</b></label>
+                                            </div>
                                         </div>
                                     </div>
                                     @endforeach
-                                   
+
                                 </form>
                             </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

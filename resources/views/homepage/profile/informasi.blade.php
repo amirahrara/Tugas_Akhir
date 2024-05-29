@@ -69,7 +69,7 @@
                 <div class="col-lg-4">
 
                     <a class="list-group-item disabled" style="margin-bottom: 20px; text-transform:capitalize " aria-disabled="true">
-                        <img src="/assets/img/icon/maleuser.png" style="height:60px;" alt=""><span><b>{{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}</b> <br>{{auth()->user()->email}}</span></a>
+                        <img src="/assets/img/icon/maleuser.png" style="height:60px;" alt=""><span><b>{{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}</b><br>&emsp; {{auth()->user()->email}}</span></a>
                     <div class="list-group">
                         <a href="{{route('informasi')}}" class="list-group-item active" aria-current="true">
                             <img src="/assets/img/icon/customer.png" style="height:60px;" alt="">
@@ -111,7 +111,7 @@
                         <div class="info__user">
                             <h4><b>Informasi Akun</b></h4>
                             <div class="info_user_akun">
-                                <form class="row g-3" action="/edit/informasi" method="post" enctype="multipart/form-data">
+                                <form class="row g-3" action="{{ route('edit-informasi') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                         <div class=" col-md-6">
                                             <label class="form-label form-dark" for="nama_depan">Nama Depan</label>

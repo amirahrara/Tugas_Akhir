@@ -27,6 +27,8 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
+
+
 Route::get('/lupaPassword', [LoginController::class, 'lupaPassword'])->name('lupaPassword');
 
 Route::get('/', [DataController::class, 'index'])->name('index');
@@ -34,6 +36,7 @@ Route::get('/produk', [DataController::class, 'produk'])->name('produk');
 Route::get('/tentangkami', [DataController::class, 'tentangkami'])->name('tentangkami');
 Route::get('/keranjang', [DataController::class, 'keranjang'])->name('keranjang');
 Route::get('/favorit', [DataController::class, 'favorit'])->name('favorit');
+Route::get('/detailfavorit', [DataController::class, 'detailfavorit'])->name('detailfavorit');
 Route::get('/kontak', [DataController::class, 'kontak'])->name('kontak');
 
 Route::get('/sale', [DataController::class, 'sale'])->name('sale');
@@ -48,10 +51,12 @@ Route::get('/rok', [DataController::class, 'rok'])->name('rok');
 Route::get('/{data:id}/detail-barang', [DataController::class, 'detailBarang']);
 
 Route::get('/checkout',[DataController::class, 'checkout'])->name('checkout');
+Route::get('/pembayaran',[DataController::class, 'pembayaran'])->name('pembayaran');
 
 //profile
 Route::get('/informasi', [DataController::class, 'informasi'])->name('informasi');
-Route::post('/edit/informasi', [DataController::class, 'informasi'])->name('informasi');
+Route::post('/edit/informasi', [DataController::class, 'editInformasi'])->name('edit-informasi');
+// Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/alamat', [AlamatController::class, 'alamat'])->name('alamat');
 Route::get('/tambahAlamat', [AlamatController::class, 'tambahAlamat'])->name('tamabahAlamat');

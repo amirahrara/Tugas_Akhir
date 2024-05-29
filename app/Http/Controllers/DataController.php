@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Kategori;
 use App\Models\Data;
+use App\Models\User;
+use App\Models\Kategori;
+use App\Models\Alamat;
+use Illuminate\Http\Request;
 
 class DataController extends Controller
 {
     public function index(){
 
-        return view('homepage.index');
+        $item = Data::inRandomOrder()->take(4)->get();
+
+        $data = Data::where('sale', '<>', null)->take(4)->get();
+        return view('homepage.index',[
+            'data' => $data,
+            'item' => $item
+        ]);
     }
 
     public function detailBarang(Data $data){
@@ -20,8 +28,9 @@ class DataController extends Controller
         ]);
     }
 
-    public function produk(){
+    public function produk(Request $request){
         $data=Data::all();
+
         return view('homepage.produk',[
             'data'=>$data
         ]);
@@ -40,14 +49,20 @@ class DataController extends Controller
         return view('homepage.favorit');
     }
 
+    public function detailfavorit(){
+        return view('homepage.detailProduk.detailfavorit');
+    }
     public function kontak(){
         return view('homepage.kontak');
     }
 
     public function sale(){
         // $data=Data::where('kategori_id', '=', '5')->latest()->get();
-        return view('homepage.kategori.sale'
-            // 'data' =>$data
+        $data = Data::where('sale', '<>', null)->get();
+        return view('homepage.kategori.sale',[
+
+            'data' =>$data
+        ]
         );
     }
     public function kemeja(){
@@ -97,8 +112,22 @@ class DataController extends Controller
     //     return view('homepage.detailProduk.detailKemeja');
     // }
     public function checkout(){
-        return view('homepage.checkout');
+
+        $userId = auth()->user()->id;
+        $al = Alamat::where('user_id', $userId)
+        ->where('utama' , '=', 'ya')->first();
+        $alamat = Alamat::where('user_id', $userId)
+        ->get();
+        return view('homepage.checkout',[
+            'alamat'=> $alamat,
+            'al' => $al
+        ]);
+        return redirect('/pembayaran');
     }
+    public function pembayaran(){
+        return view('homepage.pembayaran');
+    }
+
     public function informasi(){
         return view('homepage.profile.informasi');
     }
@@ -114,13 +143,17 @@ class DataController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        dd($validatedData);
-        Data::where('id',$user->auth()->user()->id)->update($validatedData);
+        // dd($validatedData);
+        // Data::where('id',$user->auth()->user()->id)->update($validatedData);
+        User::where('id', auth()->user()->id)->update($validatedData);
         return redirect('/informasi');
     }
 
+
+
     public function pesanan(){
         return view('homepage.profile.pesanan');
+
     }
     public function lihatDetail(){
         return view('homepage.profile.lihatDetail');
@@ -175,7 +208,7 @@ class DataController extends Controller
 
         Data::create($validatedData);
 
-        return redirect('/tambah')->with('berhasil', 'Daftar akun berhasil!!');
+        return redirect('/tambah')->with('success', 'Task Created Successfully!');
     }
 
 }

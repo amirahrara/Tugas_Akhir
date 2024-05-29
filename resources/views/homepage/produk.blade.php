@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
-                                <p>Sort by Price:</p>
+                                <p>Sortir Harga:</p>
                                 <select>
                                     <option value="">Tidak ada</option>
                                     <option value="">Rendah ke Tinggi</option>
@@ -98,12 +98,11 @@
                     @foreach ($data as $item)
 
                     <div class="col-lg-4 col-md-6 col-sm-6">
+                        @if (!empty($item->sale))
                         <div class="product__item sale">
                             <a href="/{{ $item->id }}/detail-barang">
                                 <div class="product__item__pic set-bg" data-setbg="/storage/{{$item->cover_produk}}">
-                                    @if (!empty($item->sale))
                                     <span class="label">Sale</span>
-                                    @endif
                                 </div>
                             </a>
 
@@ -111,26 +110,44 @@
                                 <h6>{{$item->nama_produk}}</h6>
                                 <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                                 <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
                                 </div>
-                                <h5>Rp. {{$item->harga}}</h5>
-                                {{-- <div class="product__color__select">
-                                    <label for="pc-25">
-                                        <input type="radio" id="pc-25">
-                                    </label>
-                                    <label class="active black" for="pc-26">
-                                        <input type="radio" id="pc-26">
-                                    </label>
-                                    <label class="grey" for="pc-27">
-                                        <input type="radio" id="pc-27">
-                                    </label>
-                                </div> --}}
+                                <h5>Rp. {{$item->sale}}</h5>
                             </div>
                         </div>
+                        @else
+                        <div class="product__item">
+                            <a href="/{{ $item->id }}/detail-barang">
+                                <div class="product__item__pic set-bg" data-setbg="/storage/{{$item->cover_produk}}">
+
+                                </div>
+                            </a>
+
+                            <div class="product__item__text">
+                                <h6>{{$item->nama_produk}}</h6>
+                                <a href="#" class="add-cart">+ Tambah ke keranjang</a>
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <h5>Rp. {{$item->harga}}</h5>
+
+                                {{-- <ul class="product__hover">
+                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
+                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
+                                    </li>
+                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
+                                </ul>--}}
+                            </div>
+                        </div>
+                        @endif
                     </div>
                     @endforeach
                     {{-- <div class="col-lg-4 col-md-6 col-sm-6">

@@ -15,7 +15,7 @@
         <div class="login__form">
             <div class="d-flex justify-content-center align-items-center h-100" >
                 <div class="card-body">
-                <h4 class="fw-bold mb-4 text-center" style="color: white">Masuk</h4>
+                <h4 class="fw-bold mb-4 text-center" style="color: white">Daftar Akun</h4>
                <form class="row g-3" action="/register" method="post">
                    @csrf
                    <div class="col-12">

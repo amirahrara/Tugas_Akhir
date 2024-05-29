@@ -18,7 +18,11 @@
         </div>
     </div>
 </section>
-
+{{-- <style>
+    ul li.active > a{
+        color: black;
+    }
+</style> --}}
 <section class="shop spad">
     <div class="container">
         <div class="row">
@@ -96,114 +100,44 @@
                     </div>
                 </div>
                 <div class="row">
+                    @foreach ($data as $item)
+
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item sale">
-                            <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-3.jpg">
+                            <a href="/{{ $item->id }}/detail-barang">
+                                <div class="product__item__pic set-bg" data-setbg="/storage/{{$item->cover_produk}}">
                                 <span class="label">Sale</span>
-                                <ul class="product__hover">
-                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul>
-                            </div>
+                                </div>
+                            </a>
+
                             <div class="product__item__text">
-                                <h6>Multi-pocket Chest Bag</h6>
-                                <a href="#" class="add-cart">+ Add To Cart</a>
+                                <h6>{{$item->nama_produk}}</h6>
+                                <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                                 <div class="rating">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star"></i>
                                 </div>
-                                <h5>$43.48</h5>
-                                <div class="product__color__select">
-                                    <label for="pc-7">
-                                        <input type="radio" id="pc-7">
+                                <h5>Rp. {{$item->sale}}</h5>
+                                {{-- <div class="product__color__select">
+                                    <label for="pc-25">
+                                        <input type="radio" id="pc-25">
                                     </label>
-                                    <label class="active black" for="pc-8">
-                                        <input type="radio" id="pc-8">
+                                    <label class="active black" for="pc-26">
+                                        <input type="radio" id="pc-26">
                                     </label>
-                                    <label class="grey" for="pc-9">
-                                        <input type="radio" id="pc-9">
+                                    <label class="grey" for="pc-27">
+                                        <input type="radio" id="pc-27">
                                     </label>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item sale">
-                            <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-6.jpg">
-                                <span class="label">Sale</span>
-                                <ul class="product__hover">
-                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Ankle Boots</h6>
-                                <a href="#" class="add-cart">+ Add To Cart</a>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                                <h5>$98.49</h5>
-                                <div class="product__color__select">
-                                    <label for="pc-16">
-                                        <input type="radio" id="pc-16">
-                                    </label>
-                                    <label class="active black" for="pc-17">
-                                        <input type="radio" id="pc-17">
-                                    </label>
-                                    <label class="grey" for="pc-18">
-                                        <input type="radio" id="pc-18">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                    @endforeach
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item sale">
-                            <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-10.jpg">
-                                <span class="label">Sale</span>
-                                <ul class="product__hover">
-                                    <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                    </li>
-                                    <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Multi-pocket Chest Bag</h6>
-                                <a href="#" class="add-cart">+ Add To Cart</a>
-                                <div class="rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                                <h5>$43.48</h5>
-                                <div class="product__color__select">
-                                    <label for="pc-28">
-                                        <input type="radio" id="pc-28">
-                                    </label>
-                                    <label class="active black" for="pc-29">
-                                        <input type="radio" id="pc-29">
-                                    </label>
-                                    <label class="grey" for="pc-30">
-                                        <input type="radio" id="pc-30">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-lg-12">

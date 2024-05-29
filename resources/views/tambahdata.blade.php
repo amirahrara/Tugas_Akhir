@@ -167,7 +167,7 @@
             </div>
 
         </div>
-
+        @include('sweetalert::alert')
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel porro voluptas a officiis nobis qui voluptates accusantium. Sit nostrum rem commodi doloremque placeat ipsum expedita, dolorem quo fugiat assumenda esse? Quidem ad praesentium amet tempora eaque odit beatae reprehenderit maxime. Omnis officia explicabo excepturi eligendi delectus voluptates tenetur quidem labore?
 
         </div>

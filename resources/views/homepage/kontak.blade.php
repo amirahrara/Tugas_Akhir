@@ -27,20 +27,17 @@
             <div class="col-lg-6 col-md-6">
                 <div class="contact__text">
                     <div class="section-title">
-                        <span>Information</span>
-                        <h2>Contact Us</h2>
-                        <p>As you might expect of a company that began as a high-end interiors contractor, we pay
-                            strict attention.</p>
+                        <span>Informasi</span>
+                        <h2>Kontak Kami</h2>
+                        <p>Apakah Anda memiliki pertanyaan, masukan, atau butuh bantuan?
+                            Tidak perlu ragu untuk menghubungi kami. Kami siap membantu Anda dengan senang hati.</p>
                     </div>
                     <ul>
                         <li>
-                            <h4>America</h4>
-                            <p>195 E Parker Square Dr, Parker, CO 801 <br />+43 982-314-0958</p>
+                            <h4>Sidoarjo</h4>
+                            <p>Perum The Taman Dhika Blok J-27, Buduran<br />+62 81232355887</p>
                         </li>
-                        <li>
-                            <h4>France</h4>
-                            <p>109 Avenue Léon, 63 Clermont-Ferrand <br />+12 345-423-9893</p>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -49,14 +46,14 @@
                     <form action="#">
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="text" placeholder="Name">
+                                <input type="text" placeholder="Nama">
                             </div>
                             <div class="col-lg-6">
                                 <input type="text" placeholder="Email">
                             </div>
                             <div class="col-lg-12">
-                                <textarea placeholder="Message"></textarea>
-                                <button type="submit" class="site-btn">Send Message</button>
+                                <textarea placeholder="Pesan"></textarea>
+                                <button type="submit" class="site-btn">Kirim Pesan</button>
                             </div>
                         </div>
                     </form>

@@ -19,19 +19,19 @@
                             <li class="nav-item">
 
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="/storage/{{ $data->gambar1 }}">
+                                    <div class="product__thumb__pic set-bg" data-setbg="/assets/img/shop-details/dress2.png">
                                     </div>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="/storage/{{ $data->gambar2 }}">
+                                    <div class="product__thumb__pic set-bg" data-setbg="/assets/img/shop-details/dress3.png">
                                     </div>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="/storage/{{ $data->gambar3 }}">
+                                    <div class="product__thumb__pic set-bg" data-setbg="/assets/img/shop-details/dress4.png">
                                     </div>
                                 </a>
                             </li>
@@ -41,17 +41,17 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="/storage/{{ $data->gambar1 }}" alt="">
+                                    <img src="/assets/img/shop-details/dress2.png" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="/storage/{{ $data->gambar2 }}" alt="">
+                                    <img src="/assets/img/shop-details/dress3.png" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="/storage/{{ $data->gambar3 }}" alt="">
+                                    <img src="/assets/img/shop-details/dress4.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="product__details__text">
-                            <h4>{{$data->nama_produk}}</h4>
+                            <h4>Dress midi black</h4>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -73,12 +73,11 @@
                                 <i class="fa fa-star"></i>
                                 <span> - 5 Reviews</span>
                             </div>
-                            @if (empty($data->sale))
-                            <h3>Rp. {{$data->harga}}</h3>
-                            @else
-                            <h3><span>Rp. {{$data->harga}}</span> Rp. {{$data->sale}}</h3>
-                            @endif
-                            <p>{{$data->caption}}</p>
+
+                            <h3>Rp. 157.000</h3>
+
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo totam provident aspernatur suscipit ex expedita eligendi quaerat veritatis,
+                                voluptate veniam libero quas aperiam, et neque maxime.</p>
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
@@ -116,16 +115,16 @@
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#favoritModal"><i class="fa fa-heart"></i> Tambah ke favorit</a>
                                 <div class="modal fade" id="favoritModal" tabindex="-1" aria-labelledby="favoritModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content" style="border-radius:15px;">
-                                            {{-- <div class="modal-header">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
                                                 <h5 class="modal-title" id="favoritModalLabel">Tambah ke Favorit</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div> --}}
-                                            <div class="modal-body mt-3 mb-3" style="color: black; font-size: 17px">
+                                            </div>
+                                            <div class="modal-body">
                                                 Produk berhasil ditambahkan sebagai favorit!
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-dark " data-bs-dismiss="modal" style="border-radius: 20px">Ok</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
                                             </div>
                                         </div>
                                     </div>
@@ -133,16 +132,16 @@
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><img src="/assets/img/icon/cart.png"> Tambah ke keranjang</a>
                                 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content" style="border-radius:15px ">
-                                            {{-- <div class="modal-header">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
                                                 <h5 class="modal-title" id="cartModalLabel">Tambah ke Keranjang</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div> --}}
-                                            <div class="modal-body mt-3 mb-3" style="color: black; font-size: 17px">
+                                            </div>
+                                            <div class="modal-body">
                                                 Produk berhasil ditambahkan ke keranjang!
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal" style="border-radius: 20px">Ok</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
                                             </div>
                                         </div>
                                     </div>
@@ -172,7 +171,7 @@
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
                                             <h5>Info Produk</h5>
-                                            <p>{{$data->deskripsi}}</p>
+                                            <p>Gaun hitam midi yang elegan</p>
                                             </div>
                                         <div class="product__details__tab__content__item">
                                             <h5>Panduan Ukuran</h5>
@@ -222,7 +221,7 @@
                                 <div class="tab-pane" id="tabs-7" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
-                                            <p>{{$data->spesifikasi}}</p>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ea cumque commodi, in corrupti consequuntur!</p>
                                         </div>
 
                                     </div>

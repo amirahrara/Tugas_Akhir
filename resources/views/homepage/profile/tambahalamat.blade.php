@@ -192,9 +192,16 @@
                                                 @enderror
                                             </div>
                                             <div class="col-12">
-                                                <label class="form-label form-dark" for="kecamatan">Jadikan alamat utama</label>
-                                                <input type="text" name="utama" id="utama" class="form-control @error ('kode_pos') is-invalid @enderror" style="color: black" required value="{{old ('utama')}}"/>
+                                                <div class="form-check form-switch" style="position: relative; text-align: right;  margin-bottom:20px; margin-right:20px">
+                                                    <!-- Input hidden untuk nilai "tidak" -->
+                                                    <input type="hidden" name="utama" value="tidak">
+
+                                                    <!-- Checkbox untuk nilai "ya" -->
+                                                    <input name="utama" class="form-check-input" style="width: 40px; height: 18px;" type="checkbox" role="switch" id="flexSwitchCheckDefault" value="ya">
+                                                    <label class="form-check-label" for="flexSwitchCheckDefault" style="position: absolute; bottom: 20; right: 0; margin-right: 50px;"><b>Jadikan Alamat Utama</b></label>
+                                                </div>
                                             </div>
+
                                             <div class="col-md-4">
                                                 <button type="submit" class="site-btn">Simpan</button>
                                             </div>

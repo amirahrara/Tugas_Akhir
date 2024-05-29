@@ -22,25 +22,38 @@ class AlamatController extends Controller
     }
 
     public function createAlamat(Request $request)
-    {
 
-        $validatedData = $request->validate([
-            'nama_penerima'=> 'required',
-            'no_penerima'=>'required|max:255',
-            'alamat' => 'required',
-            'provinsi' => 'required',
-            'kota' => 'required',
-            'kecamatan' => 'required',
-            'kelurahan' => 'required',
-            'kode_pos' => 'required',
-            'utama' => ''
+{
 
-        ]);
-        $validatedData['user_id'] = auth()->user()->id;
-        // dd($validatedData);
-        Alamat::create($validatedData);
-        return redirect('/alamat');
-    }
+    //dd($request);
+    $validatedData = $request->validate([
+        'nama_penerima' => 'required',
+        'no_penerima' => 'required|max:255',
+        'alamat' => 'required',
+        'provinsi' => 'required',
+        'kota' => 'required',
+        'kecamatan' => 'required',
+        'kelurahan' => 'required',
+        'kode_pos' => 'required',
+        'utama' => 'required' // Pastikan field utama ada di form HTML
+    ]);
+
+    // Menentukan nilai untuk kolom alamat_utama berdasarkan status toggle
+    $alamat_utama = $request->input('utama') === 'ya' ? 'ya' : 'tidak';
+
+    // Menambahkan user_id ke data yang akan disimpan
+    $validatedData['user_id'] = auth()->user()->id;
+
+    // Menambahkan nilai alamat_utama ke dalam data yang akan disimpan
+    $validatedData['alamat_utama'] = $alamat_utama;
+
+    // Membuat entri alamat baru dalam database
+    Alamat::create($validatedData);
+
+    // Redirect ke halaman alamat setelah entri berhasil dibuat
+    return redirect('/alamat');
+}
+
 
 
 }

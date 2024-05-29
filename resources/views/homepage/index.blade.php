@@ -2,23 +2,67 @@
 
 @section('content')
 <style>
-    /* .hero__items{
-    position: absolute;
-
+    /* .hero__slider {
     display: flex;
-    transition: 1s;
-}
- .hero__slider .owl-carousel ul{
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    color: #fff;
+    overflow: hidden;
+    position: relative;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-} */
+    }
+
+.hero__items {
+    flex: 1 0 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+
+.hero__slider:hover .hero__items {
+    animation-play-state: paused;
+}
+
+.hero__items:nth-child(1) {
+    animation: slide 6s infinite;
+}
+
+.hero__items:nth-child(2) {
+    animation: slide 6s infinite 3s;
+}
+
+    @keyframes slide {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        15% {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+        60% {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+        75% {
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    } */
+
+    /* .hero__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    } */
+
+    /* tambahkan gaya lainnya sesuai kebutuhan Anda */
+
 .custom-cursor {
   width: 100vw; /* Lebar sama dengan viewport */
   height: 100vh; /* Tinggi sama dengan viewport */
@@ -30,29 +74,53 @@
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
-        /* Background gelap */
-        .dark-background {
-            width: 100vw;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 33.33%, transparent 33.33%, transparent 66.67%, rgba(0, 0, 0, 0.7) 66.67%, rgba(0, 0, 0, 0.7) 100%); /* Gradient gelap dengan opacity 0.7 di bagian atas dan bawah */
-            pointer-events: none; /* Memungkinkan interaksi dengan elemen di bawahnya */
-            z-index: 9999; /* Di bawah transparent-box */
-            overflow: hidden; /* Sembunyikan overflow agar elemen ::after tidak terlihat di luar batas */
-        }
+
 
 
 </style>
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
-    {{-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+
+    {{-- Slider Not Playing --}}
+    <div id="carouselExampleNotPlaying" class="carousel slide" style="display: none;">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="/assets/img/pamflet-4.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block" style="position: absolute;top: 55%; left: 50%;transform: translate(-50%, -50%); width: 80%; text-align: center;">
+                <h6 style="font-size: 25px; color: white;">Toko Fashion Wanita</h6>
+                <h2 style="font-size: 55px; color: white;">BUTIK ORLIN COLLECTION</h2>
+                <p style="font-size: 20px; color: white;">A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                                    commitment to exceptional quality.</p>
+                <a href="{{route('produk')}}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+              </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/assets/img/hero/hero-2.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleNotPlaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleNotPlaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+    </div>
 
+    {{-- Slider Playing --}}
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/assets/img/pamflet-4.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block" style="position: absolute;top: 55%; left: 50%;transform: translate(-50%, -50%); width: 80%; text-align: center;">
+                <h6 style="font-size: 25px; color: white;">Toko Fashion Wanita</h6>
+                <h2 style="font-size: 55px; color: white;">BUTIK ORLIN COLLECTION</h2>
+                <p style="font-size: 20px; color: white;">A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                                    commitment to exceptional quality.</p>
+                <a href="{{route('produk')}}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+              </div>
           </div>
           <div class="carousel-item">
             <img src="/assets/img/hero/hero-2.jpg" class="d-block w-100" alt="...">
@@ -67,20 +135,25 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div> --}}
-    <section class="hero">
+    </div>
+    {{-- <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="/assets/img/pamflet-4.png" >
+            <div class="hero__items set-bg " data-setbg="/assets/img/pamflet-4.png" >
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-8 col-lg-9 col-md-8">
                             <div class="hero__text">
-                                <h6 style="font-size: 25px; color: white;">Fashion Wanita</h6>
+                                <h6 style="font-size: 25px; color: white;">Toko Fashion Wanita</h6>
                                 <h2 style="font-size: 55px; color: white;">BUTIK ORLIN COLLECTION</h2>
                                 <p style="font-size: 20px; color: white;">A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                     commitment to exceptional quality.</p>
                                 <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-
+                                <div class="hero__social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,7 +169,12 @@
                                 <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                     commitment to exceptional quality.</p>
                                 <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-
+                                <div class="hero__social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,7 +183,7 @@
 
         </div>
 
-    </section>
+    </section> --}}
     <!-- Hero Section End -->
 
 
@@ -123,180 +201,75 @@
                 </div>
             </div>
             <div class="row product__filter">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/assets/img/product/product-1.jpg">
-                            <span class="label">New</span>
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="/assets/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/compare.png" alt="">
-                                        <span>Compare</span></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>$67.24</h5>
-                            <div class="product__color__select">
-                                <label for="pc-1">
-                                    <input type="radio" id="pc-1">
-                                </label>
-                                <label class="active black" for="pc-2">
-                                    <input type="radio" id="pc-2">
-                                </label>
-                                <label class="grey" for="pc-3">
-                                    <input type="radio" id="pc-3">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @foreach ($data as $d)
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/assets/img/product/product-2.jpg">
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="/assets/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/compare.png" alt="">
-                                        <span>Compare</span></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>$67.24</h5>
-                            <div class="product__color__select">
-                                <label for="pc-4">
-                                    <input type="radio" id="pc-4">
-                                </label>
-                                <label class="active black" for="pc-5">
-                                    <input type="radio" id="pc-5">
-                                </label>
-                                <label class="grey" for="pc-6">
-                                    <input type="radio" id="pc-6">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="/assets/img/product/product-3.jpg">
-                            <span class="label">Sale</span>
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="/assets/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/compare.png" alt="">
-                                        <span>Compare</span></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
+                        <a href="/{{ $d->id }}/detail-barang">
+                            <div class="product__item__pic set-bg" data-setbg="/storage/{{$d->cover_produk}}">
+                                @if (!empty($d->sale))
+                                <span class="label">Sale</span>
+                                @endif
+                            </div>
+                        </a>
                         <div class="product__item__text">
-                            <h6>Multi-pocket Chest Bag</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <h6>{{$d->nama_produk}}</h6>
+                            <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star"></i>
                             </div>
-                            <h5>$43.48</h5>
-                            <div class="product__color__select">
-                                <label for="pc-7">
-                                    <input type="radio" id="pc-7">
-                                </label>
-                                <label class="active black" for="pc-8">
-                                    <input type="radio" id="pc-8">
-                                </label>
-                                <label class="grey" for="pc-9">
-                                    <input type="radio" id="pc-9">
-                                </label>
-                            </div>
+                            <h5 class="dynamic-font">Rp. {{$d->sale}}</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/assets/img/product/product-4.jpg">
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="/assets/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/compare.png" alt="">
-                                        <span>Compare</span></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6>Diagonal Textured Cap</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>$60.9</h5>
-                            <div class="product__color__select">
-                                <label for="pc-10">
-                                    <input type="radio" id="pc-10">
-                                </label>
-                                <label class="active black" for="pc-11">
-                                    <input type="radio" id="pc-11">
-                                </label>
-                                <label class="grey" for="pc-12">
-                                    <input type="radio" id="pc-12">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+                @foreach ($item as $item )
+
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                    <div class="product__item ">
+                        <a href="/{{ $item->id }}/detail-barang">
+                            <div class="product__item__pic set-bg" data-setbg="/storage/{{$item->cover_produk}}">
+                                {{-- @if (!empty($item->sale))
+                                <span class="label">Sale</span>
+                                @endif --}}
+                            </div>
+                        </a>
+                        <div class="product__item__text">
+                            <h6>{{$item->nama_produk}}</h6>
+                            <a href="#" class="add-cart">+ Tambah ke keranjang</a>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <h5 class="dynamic-font">Rp. {{$item->harga}}</h5>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="/assets/img/product/product-5.jpg">
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="/assets/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/compare.png" alt="">
-                                        <span>Compare</span></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/search.png" alt=""></a></li>
-                            </ul>
+
                         </div>
                         <div class="product__item__text">
                             <h6>Lether Backpack</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                             <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
                             <h5>$31.37</h5>
-                            <div class="product__color__select">
-                                <label for="pc-13">
-                                    <input type="radio" id="pc-13">
-                                </label>
-                                <label class="active black" for="pc-14">
-                                    <input type="radio" id="pc-14">
-                                </label>
-                                <label class="grey" for="pc-15">
-                                    <input type="radio" id="pc-15">
-                                </label>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -304,16 +277,11 @@
                     <div class="product__item sale">
                         <div class="product__item__pic set-bg" data-setbg="/assets/img/product/product-6.jpg">
                             <span class="label">Sale</span>
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="/assets/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/compare.png" alt="">
-                                        <span>Compare</span></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/search.png" alt=""></a></li>
-                            </ul>
+
                         </div>
                         <div class="product__item__text">
                             <h6>Ankle Boots</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -322,90 +290,50 @@
                                 <i class="fa fa-star-o"></i>
                             </div>
                             <h5>$98.49</h5>
-                            <div class="product__color__select">
-                                <label for="pc-16">
-                                    <input type="radio" id="pc-16">
-                                </label>
-                                <label class="active black" for="pc-17">
-                                    <input type="radio" id="pc-17">
-                                </label>
-                                <label class="grey" for="pc-18">
-                                    <input type="radio" id="pc-18">
-                                </label>
-                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="/assets/img/product/product-7.jpg">
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="/assets/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/compare.png" alt="">
-                                        <span>Compare</span></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/search.png" alt=""></a></li>
-                            </ul>
+
                         </div>
                         <div class="product__item__text">
                             <h6>T-shirt Contrast Pocket</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                             <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
                             <h5>$49.66</h5>
-                            <div class="product__color__select">
-                                <label for="pc-19">
-                                    <input type="radio" id="pc-19">
-                                </label>
-                                <label class="active black" for="pc-20">
-                                    <input type="radio" id="pc-20">
-                                </label>
-                                <label class="grey" for="pc-21">
-                                    <input type="radio" id="pc-21">
-                                </label>
-                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="/assets/img/product/product-8.jpg">
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="/assets/img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/compare.png" alt="">
-                                        <span>Compare</span></a></li>
-                                <li><a href="#"><img src="/assets/img/icon/search.png" alt=""></a></li>
-                            </ul>
+
                         </div>
                         <div class="product__item__text">
                             <h6>Basic Flowing Scarf</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
+                            <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                             <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                             </div>
                             <h5>$26.28</h5>
-                            <div class="product__color__select">
-                                <label for="pc-22">
-                                    <input type="radio" id="pc-22">
-                                </label>
-                                <label class="active black" for="pc-23">
-                                    <input type="radio" id="pc-23">
-                                </label>
-                                <label class="grey" for="pc-24">
-                                    <input type="radio" id="pc-24">
-                                </label>
-                            </div>
+
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -423,96 +351,49 @@
             </form>
         </div>
     </div>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
-    {{-- <script>
-        $(document).ready(function(){
-            var owl = $('hero__slider').owlCarousel({
-                items: 1,
-                loop: true,
-                autoplay: false,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: true,
-                nav: false,
-                dots: false
-            });
 
-            $('hero__prev').click(function() {
-                owl.trigger('prev.owl.carousel');
-            });
-
-            $('hero__next').click(function() {
-                owl.trigger('next.owl.carousel');
-            });
-
-            $('hero__play').click(function() {
-                owl.trigger('play.owl.autoplay', [5000]);
-            });
-
-            $('hero__stop').click(function() {
-                owl.trigger('stop.owl.autoplay');
-            });
-        });
-    </script> --}}
     @endsection
 
-    {{-- <script>
-        $(document).ready(function(){
-            $('.hero__items').each(function() {
-                $(this).owlCarousel({
-                    items: 1,
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 5000, // 5 seconds
-                    autoplayHoverPause: true
-                });
-            });
-        });
-    </script> --}}
-    {{-- <script>
-        let start= 0;
-        otomatis();
-
-        function otomatis(){
-            const sliders = document.querySelectorAll(".hero__items");
-            for (let i= 0; i<sliders.length; i++){
-                sliders[i].style.display= "none";
-
-            }
-            if(start>=sliders.length){
-                start = 0;
-            }
-            sliders[start],style.display= "block";
-            console.log("slide ke" +start);
-            start++;
-            setTimeout(otomatis, 2000);
+    {{-- <script type="text/javascript">
+        function bigImg(x) {
+            x.style.fontSize = '30px';
+            x.style.height = "64px";
+            x.style.width = "60%";
         }
-    </script> --}}
 
-    {{-- <div class="custom-cursor"></div> --}}
-    <div class="dark-background">
-        <!-- Div baru untuk strip dinamis -->
-        {{-- <div class="dynamic-strip"></div> --}}
-    </div>
-    {{-- <div class="transparent-box"></div> <!-- Lapisan kotak transparan --> --}}
+        function normalImg(x) {
+            x.style.fontSize = '17px';
+            x.style.height = "32px";
+            x.style.width = "60%";
+        }
 
-
-
-    <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var darkBackground = document.querySelector('.dark-background');
-            var mouseY = 0;
-            var transparentPercentage = 50;
+            document.addEventListener("mousemove", function() {
+                const dynamicFontElements = document.querySelectorAll('.dynamic-font');
 
-            document.addEventListener("mousemove", function(event) {
-                mouseY = event.clientY;
-                var totalHeight = window.innerHeight;
-                transparentPercentage = (mouseY / totalHeight) * 100;
-
-                darkBackground.style.background = `
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) ${transparentPercentage}%, transparent ${transparentPercentage}%, transparent ${transparentPercentage + 25}%, rgba(0, 0, 0, 0.7) ${transparentPercentage + 2}%, rgba(0, 0, 0, 0.7) 100%)`;
+                dynamicFontElements.forEach(element => {
+                    element.setAttribute('onmouseenter', 'bigImg(this)');
+                    element.setAttribute('onmouseleave', 'normalImg(this)');
+                });
 
             });
+        }); --}}
+
+        {{-- </script> --}}
+
+{{-- <script>
+    var owl = $('.hero__slider');
+    owl.owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 1500,
+            autoplayHoverPause: true,
+            nav: true,
+            navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
 
         });
-    </script>
+
+
+
+</script> --}}

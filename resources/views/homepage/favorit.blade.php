@@ -36,26 +36,32 @@
                         <tbody>
                             <tr>
                                 <td class="product__cart__item" colspan="3">
-                                    <div class="product__cart__item__pic">
-                                        <img src="assets/img/shopping-cart/cart-1.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>T-shirt Contrast Pocket</h6>
-                                        <h5>Rp. 150.000</h5>
-                                    </div>
+                                    <a href="/detailfavorit">
+                                        <div class="product__cart__item__pic">
+                                            <img src="assets/img/shopping-cart/rok1.png" alt="">
+                                        </div>
+                                        <div class="product__cart__item__text">
+                                            <h6>T-shirt Contrast Pocket</h6>
+                                            <h5>Rp. 150.000</h5>
+                                        </div>
+
+                                    </a>
                                 </td>
 
                                 <td class="cart__close"><i class="fa fa-close"></i></td>
                             </tr>
                             <tr>
                                 <td class="product__cart__item" colspan="3">
-                                    <div class="product__cart__item__pic">
-                                        <img src="assets/img/shopping-cart/cart-2.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text" >
-                                        <h6>Diagonal Textured Cap</h6>
-                                        <h5>Rp. 98.000</h5>
-                                    </div>
+                                    <a href="/detailfavorit">
+
+                                        <div class="product__cart__item__pic">
+                                            <img src="assets/img/shopping-cart/dress1.png" alt="">
+                                        </div>
+                                        <div class="product__cart__item__text" >
+                                            <h6>Diagonal Textured Cap</h6>
+                                            <h5>Rp. 98.000</h5>
+                                        </div>
+                                    </a>
                                 </td>
 
                                 <td class="cart__close"><i class="fa fa-close"></i></td>

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-7">
                     <div class="header__top__left">
-                        <p>Free shipping, 30-day return or refund guarantee.</p>
+                        <p>Dapatkan Potongan Ongkir Hingga 15.000 dengan min pembelanjaan 150.000</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-5">
@@ -20,7 +20,7 @@
                                     {{-- <li><hr class="dropdown-divider"></li> --}}
                                     <form action="/logout" method="post">
                                     @csrf
-                                    <button type="submit" class="dropdown-item" style="font-size: 13px; letter-spacing: 2px; text-transform: uppercase;"><i class="fas fa-sign-out-alt"></i>Keluar</button>
+                                    <button type="submit" class="dropdown-item" style="font-size: 13px; letter-spacing: 2px; text-transform: uppercase;">Keluar</button>
                                 </form>
                                 </ul>
                             </div>
@@ -86,19 +86,26 @@
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
+                        <li class="{{ request()->routeIs('index') ? 'active' : '' }}"><a href="{{ route('index') }}">Beranda</a></li>
+                        <li class="{{ request()->routeIs('produk') ? 'active' : '' }}"><a href="{{ route('produk') }}">Produk</a></li>
+                        <li class="{{ request()->routeIs('tentangkami') ? 'active' : '' }}"><a href="{{ route('tentangkami') }}">Tentang Kami</a></li>
+                        <li class="{{ request()->routeIs('kontak') ? 'active' : '' }}"><a href="{{ route('kontak') }}">Kontak</a></li>
+                    </ul>
+
+                    {{-- <ul>
                         <li class="active"><a href="{{route('index')}}">Beranda</a></li>
                         <li><a href="{{ route('produk')}}">Produk</a></li>
                         <li><a href="{{route('tentangkami')}}">Tentang Kami</a></li>
                         <li><a href="{{route('kontak')}}">Kontak</a></li>
-                    </ul>
+                    </ul> --}}
                 </nav>
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
                     <a href="#" class="search-switch"><img src="/assets/img/icon/search.png" alt=""></a>
                     <a href="{{route('favorit')}}"><img src="/assets/img/icon/heart.png" alt=""></a>
-                    <a href="{{route('keranjang')}}"><img src="/assets/img/icon/cart.png" alt=""> <span>0</span></a>
-                    <div class="price">Rp. 0.00</div>
+                    <a href="{{route('keranjang')}}"><img src="/assets/img/icon/cart.png" alt=""> <span>2</span></a>
+                    <div class="price">Rp. 328.000</div>
                 </div>
             </div>
         </div>

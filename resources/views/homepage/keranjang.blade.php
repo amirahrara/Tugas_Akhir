@@ -38,10 +38,10 @@
                             <tr>
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
-                                        <img src="assets/img/shopping-cart/cart-1.jpg" alt="">
+                                        <img src="assets/img/shopping-cart/kemeja7.png" alt="">
                                     </div>
                                     <div class="product__cart__item__text">
-                                        <h6>T-shirt Contrast Pocket</h6>
+                                        <h6>Bell Sleeve Blouse with Tied Details</h6>
                                         <h5>Rp. 150.000</h5>
                                     </div>
                                 </td>
@@ -58,11 +58,11 @@
                             <tr>
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
-                                        <img src="assets/img/shopping-cart/cart-2.jpg" alt="">
+                                        <img src="assets/img/shopping-cart/celana1.png" alt="">
                                     </div>
                                     <div class="product__cart__item__text">
-                                        <h6>Diagonal Textured Cap</h6>
-                                        <h5>Rp. 98.000</h5>
+                                        <h6>Drawstring Cargo Pants</h6>
+                                        <h5>Rp. 178.000</h5>
                                     </div>
                                 </td>
                                 <td class="quantity__item">
@@ -72,9 +72,9 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="cart__price">Rp. 98.000</td>
+                                <td class="cart__price">Rp. 178.000</td>
                                 <td class="cart__close"><i class="fa fa-close"></i></td>
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -103,7 +103,7 @@
                     <h5>Pesanan</h5>
                     <ul>
                         <li>Total Produk <span style="color: black">2</span></li>
-                        <li>Subtotal <span>Rp. 215.000</span></li>
+                        <li>Subtotal <span>Rp. 328.000</span></li>
                     </ul>
                     <h6 style="font-size: smaller"><b>*Belum termasuk ongkir</b></h6>
                     <br>

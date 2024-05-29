@@ -120,7 +120,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <a class="list-group-item disabled" style="margin-bottom: 20px; " aria-disabled="true">
-                        <img src="/assets/img/icon/maleuser.png" style="height:60px;" alt=""><span><b>Amirah</b> <br>nama@gmail.com</span></a>
+                        <img src="/assets/img/icon/maleuser.png" style="height:60px;" alt=""><span><b>{{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}</b><br>&emsp; {{auth()->user()->email}}</span></a>
                     <div class="list-group">
                         <a href="{{route('informasi')}}" class="list-group-item" >
                             <img src="/assets/img/icon/customer.png" style="height:60px;" alt="">
@@ -190,7 +190,7 @@
                                                         <img src="/assets/img/product/dress1.png" alt="" style="max-width: 90px">
                                                     </div>
                                                     <div class="product__cart__item__text" style="padding-top: 5px">
-                                                        <h6>T-shirt Contrast Pocket</h6>
+                                                        <h6>Dress midi Black</h6>
                                                         <h6>Ukuran: </h6>
                                                         <h6>Warna: </h6>
                                                     </div>
