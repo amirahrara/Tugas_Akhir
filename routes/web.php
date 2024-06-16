@@ -59,7 +59,8 @@ Route::post('/edit/informasi', [DataController::class, 'editInformasi'])->name('
 // Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/alamat', [AlamatController::class, 'alamat'])->name('alamat');
-Route::get('/tambahAlamat', [AlamatController::class, 'tambahAlamat'])->name('tamabahAlamat');
+Route::post('/alamat/{alamat:id}', [AlamatController::class, 'hapusAl']);
+Route::get('/tambahAlamat', [AlamatController::class, 'tambahAlamat'])->name('tambahAlamat');
 Route::post('/create-alamat', [AlamatController::class, 'createAlamat'])->name('createAlamat');
 Route::get('/pesanan', [DataController::class, 'pesanan'])->name('pesanan');
 Route::get('/lihatDetail', [DataController::class, 'lihatDetail'])->name('lihatDetail');

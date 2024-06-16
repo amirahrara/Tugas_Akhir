@@ -17,13 +17,16 @@ class AlamatController extends Controller
             'alamat'=>$alamat
         ]);
     }
+    public function hapusAl(Alamat $alamat)
+    {
+        Alamat::destroy($alamat->id);
+        return redirect('/alamat');
+    }
     public function tambahAlamat(){
         return view('homepage.profile.tambahAlamat');
     }
 
-    public function createAlamat(Request $request)
-
-{
+    public function createAlamat(Request $request){
 
     //dd($request);
     $validatedData = $request->validate([

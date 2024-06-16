@@ -2,6 +2,7 @@
 
 @section('content')
 <style>
+
     /* .hero__slider {
     display: flex;
     overflow: hidden;
@@ -74,8 +75,57 @@
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
+.carousel-caption {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+}
 
 
+
+    
+
+    @media only screen and(max-width: 768px) {
+    .carousel-caption{
+        position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    }
+    .carousel-caption h6.caption-title {
+        font-size: 15px;
+
+    }
+
+    .carousel-caption h2.caption-main-title {
+        font-size: 28px;
+    }
+
+    .carousel-caption p.caption-text {
+        font-size: 13px;
+    }
+
+}
+
+@media only screen and (max-width: 576px) {
+    .carousel-caption h6.caption-title {
+        font-size: 13px;
+    }
+
+    .carousel-caption h2.caption-main-title {
+        font-size: 8px;
+    }
+
+    .carousel-caption p.caption-text {
+        font-size: 10px;
+    }
+
+}
 
 </style>
     <!-- Header Section End -->
@@ -85,57 +135,57 @@
     {{-- Slider Not Playing --}}
     <div id="carouselExampleNotPlaying" class="carousel slide" style="display: none;">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/assets/img/pamflet-4.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" style="position: absolute;top: 55%; left: 50%;transform: translate(-50%, -50%); width: 80%; text-align: center;">
-                <h6 style="font-size: 25px; color: white;">Toko Fashion Wanita</h6>
-                <h2 style="font-size: 55px; color: white;">BUTIK ORLIN COLLECTION</h2>
-                <p style="font-size: 20px; color: white;">A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                    commitment to exceptional quality.</p>
-                <a href="{{route('produk')}}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-              </div>
-          </div>
-          <div class="carousel-item">
-            <img src="/assets/img/hero/hero-2.jpg" class="d-block w-100" alt="...">
-          </div>
+            <div class="carousel-item active">
+                <img src="/assets/img/pamflet-4.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-block text-center text-md-block">
+                    <h6 class="caption-title" style="font-size: 25px; color: white;">Toko Fashion Wanita</h6>
+                    <h2 class="caption-main-title" style="font-size: 55px; color: white;">BUTIK ORLIN COLLECTION</h2>
+                    <p class="caption-text" style="font-size: 20px; color: white;">A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                        commitment to exceptional quality.</p>
+                    <a href="{{route('produk')}}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/img/hero/hero-2.jpg" class="d-block w-100" alt="...">
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleNotPlaying" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleNotPlaying" data-bs-slide="next">
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleNotPlaying" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-          </button>
+        </button>
     </div>
 
     {{-- Slider Playing --}}
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/assets/img/pamflet-4.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block" style="position: absolute;top: 55%; left: 50%;transform: translate(-50%, -50%); width: 80%; text-align: center;">
-                <h6 style="font-size: 25px; color: white;">Toko Fashion Wanita</h6>
-                <h2 style="font-size: 55px; color: white;">BUTIK ORLIN COLLECTION</h2>
-                <p style="font-size: 20px; color: white;">A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                    commitment to exceptional quality.</p>
-                <a href="{{route('produk')}}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-              </div>
-          </div>
-          <div class="carousel-item">
-            <img src="/assets/img/hero/hero-2.jpg" class="d-block w-100" alt="...">
-          </div>
-
+            <div class="carousel-item active">
+                <img src="/assets/img/pamflet-4.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-block text-center text-md-block">
+                    <h6 class="caption-title" style="font-size: 25px; color: white;">Toko Fashion Wanita</h6>
+                    <h2 class="caption-main-title" style="font-size: 55px; color: white;">BUTIK ORLIN COLLECTION</h2>
+                    <p class="caption-text" style="font-size: 20px; color: white;">A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                        commitment to exceptional quality.</p>
+                    <a href="{{route('produk')}}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/img/hero/hero-2.jpg" class="d-block w-100" alt="...">
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
     </div>
+
     {{-- <section class="hero">
         <div class="hero__slider owl-carousel">
             <div class="hero__items set-bg " data-setbg="/assets/img/pamflet-4.png" >
@@ -239,7 +289,7 @@
                             </div>
                         </a>
                         <div class="product__item__text">
-                            <h6>{{$item->nama_produk}}</h6>
+                            <h6 class="dynamic-font">{{$item->nama_produk}}</h6>
                             <a href="#" class="add-cart">+ Tambah ke keranjang</a>
                             <div class="rating">
                                 <i class="fa fa-star"></i>

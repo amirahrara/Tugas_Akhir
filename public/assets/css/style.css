@@ -1251,9 +1251,10 @@ ol {
 .shop__sidebar__categories ul li a,
 .shop__sidebar__price ul li a,
 .shop__sidebar__brand ul li a {
-	color: #b7b7b7;
-	font-size: 15px;
+	color: #999999;
+	font-size: 16px;
 	line-height: 32px;
+    font-weight: bold;
 	-webkit-transition: all, 0.3s;
 	-o-transition: all, 0.3s;
 	transition: all, 0.3s;
@@ -1262,7 +1263,8 @@ ol {
 .shop__sidebar__categories ul li a:hover,
 .shop__sidebar__price ul li a:hover,
 .shop__sidebar__brand ul li a:hover {
-	color: #111111;
+	color: #000000;
+    font-weight: bold;
 }
 
 .shop__sidebar__brand ul {
@@ -3825,7 +3827,7 @@ ol {
 	.hero__social {
 		margin-top: 180px;
 	}
-    
+
 }
 
 /* Small Device = 320px */

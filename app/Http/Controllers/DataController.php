@@ -132,6 +132,8 @@ class DataController extends Controller
         return view('homepage.profile.informasi');
     }
 
+    
+
     public function editInformasi(User $user, Request $request){
 
         $rules = [

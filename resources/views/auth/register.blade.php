@@ -48,7 +48,13 @@
                     <div class="col-12">
                         <label class="form-label form-dark" for="password">Kata Sandi</label>
                         <div class="input-group">
-                            <input type="password" name="password" id="password" data-toogle="password" class="form-control" required/>
+                            <input type="password" name="password" id="password" data-toogle="password" class="form-control @error ('password') is-invalid @enderror" required/>
+                            @error('password')
+                             <div class="invalid-feedback">
+                             {{ $message }}
+                            </div>
+                            @enderror
+
                             <div class="input-group-append">
                                 <span class="input-group-text" onclick="password_show_hide();">
                                     <i class="fas fa-eye d-none" id="show_eye"></i>
@@ -56,8 +62,9 @@
                                 </span>
                             </div>
                         </div>
+                        <label for="password" style="color: black; font-size: 15px;">*Kata sandi minimal 8 karakter</label>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 mt-1">
                         <label class="form-label form-dark" for="no_telp">No.Telepon</label>
                         <input type="no_telp" name="no_telp" id="no_telp" class="form-control @error ('no_telp') is-invalid @enderror" placeholder="contoh: 082246299001" autofocus required value="{{ old('no_telp') }}"/>
                         @error('no_telp')

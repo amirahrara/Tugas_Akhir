@@ -79,22 +79,22 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__left">
-                                <p>Showing 1–12 of 126 results</p>
+                                <p>Tampilkan 1–12 dari 126 produk</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
                                 <p>Sortir Harga:</p>
-                                <select>
-                                    <option value="">Tidak ada</option>
-                                    <option value="">Rendah ke Tinggi</option>
-                                    <option value="">Tinggi ke Rendah</option>
+                                <select id="priceSort" onchange="sortProducts()">
+                                    <option value="none">Tidak ada</option>
+                                    <option value="low-to-high">Rendah ke Tinggi</option>
+                                    <option value="high-to-low">Tinggi ke Rendah</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="productList">
                     @foreach ($data as $item)
 
                     <div class="col-lg-4 col-md-6 col-sm-6">
@@ -116,7 +116,7 @@
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
-                                <h5>Rp. {{$item->sale}}</h5>
+                                <h5 class="dynamic-font" id="harga">Rp. {{$item->sale}}</h5>
                             </div>
                         </div>
                         @else
@@ -137,7 +137,7 @@
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
-                                <h5>Rp. {{$item->harga}}</h5>
+                                <h5 class="dynamic-font" id="harga">Rp. {{$item->harga}}</h5>
 
                                 {{-- <ul class="product__hover">
                                     <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
@@ -555,4 +555,45 @@
         </div>
     </div>
 </section>
+<script>
+
+// Variable buat nyimpen urutan awal produk
+var originalProducts = Array.from(document.querySelectorAll("#productList .col-lg-4"));
+
+function sortProducts() {
+    var selectBox = document.getElementById("priceSort");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+
+    // Nge-copy element produk biar styling gak ilang
+    var products = Array.from(document.querySelectorAll("#productList .col-lg-4"));
+
+    if (selectedValue === "none") {
+        // Balikin urutan produk ke posisi awal
+        products = originalProducts;
+    } else {
+        products.sort(function(a, b) {
+            var priceA = extractPrice(a);
+            var priceB = extractPrice(b);
+
+            if (selectedValue === "low-to-high") {
+                return priceA - priceB;
+            } else if (selectedValue === "high-to-low") {
+                return priceB - priceA;
+            }
+        });
+    }
+
+    var productList = document.getElementById("productList");
+    productList.innerHTML = "";
+    products.forEach(function(product) {
+        productList.appendChild(product);
+    });
+}
+
+function extractPrice(productElement) {
+    var priceText = productElement.querySelector("#harga").innerText;
+    return parseInt(priceText.replace(/[^0-9]/g, ''));
+}
+
+</script>
 @endsection

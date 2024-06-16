@@ -82,7 +82,7 @@
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
-                                    <label class="active" for="xl">xl
+                                    <label  for="xl">xl
                                         <input type="radio" id="xl">
                                     </label>
                                     <label for="l">l
@@ -106,47 +106,17 @@
                             <div class="product__details__cart__option">
                                 <div class="quantity">
                                     <div class="pro-qty">
-                                        <input type="text" value="1">
+                                        <input type="text" value="0">
                                     </div>
                                 </div>
                                 <a href="{{route('checkout')}}" class="primary-btn">Beli Sekarang</a>
                             </div>
                             <div class="product__details__btns__option">
                                 {{-- <button type="button" class="btn btn-light"><i class="fa fa-heart"></i> Tambah ke favorit</button> --}}
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#favoritModal"><i class="fa fa-heart"></i> Tambah ke favorit</a>
-                                <div class="modal fade" id="favoritModal" tabindex="-1" aria-labelledby="favoritModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content" style="border-radius:15px;">
-                                            {{-- <div class="modal-header">
-                                                <h5 class="modal-title" id="favoritModalLabel">Tambah ke Favorit</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div> --}}
-                                            <div class="modal-body mt-3 mb-3" style="color: black; font-size: 17px">
-                                                Produk berhasil ditambahkan sebagai favorit!
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-dark " data-bs-dismiss="modal" style="border-radius: 20px">Ok</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><img src="/assets/img/icon/cart.png"> Tambah ke keranjang</a>
-                                <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content" style="border-radius:15px ">
-                                            {{-- <div class="modal-header">
-                                                <h5 class="modal-title" id="cartModalLabel">Tambah ke Keranjang</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div> --}}
-                                            <div class="modal-body mt-3 mb-3" style="color: black; font-size: 17px">
-                                                Produk berhasil ditambahkan ke keranjang!
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal" style="border-radius: 20px">Ok</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <a href="#" onclick="confirmFavorit()"><i class="fa fa-heart"></i> Tambah ke favorit</a>
+
+                                <a href="#" onclick="confirmKeranjang()"><img src="/assets/img/icon/cart.png"> Tambah ke keranjang</a>
+
                             </div>
 
                         </div>
@@ -222,7 +192,7 @@
                                 <div class="tab-pane" id="tabs-7" role="tabpanel">
                                     <div class="product__details__tab__content">
                                         <div class="product__details__tab__content__item">
-                                            <p>{{$data->spesifikasi}}</p>
+                                            <li>{{$data->spesifikasi}}</li>
                                         </div>
 
                                     </div>
@@ -386,19 +356,21 @@
             </div>
         </div>
     </section> --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
-    $(function(){
-        $(document).on('click', '#favorit', function(e){
-            e.preventDefault();
-            var link = $(this).attr('href');
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Your work has been saved",
-                showConfirmButton: false,
-                timer: 1500
-                });
-        })
-    });
+function confirmFavorit(){
+    Swal.fire({
+  title: "Produk berhasil ditambahkan sebagai favorit!",
+  icon: "success"
+});
+
+}
+function confirmKeranjang(){
+    Swal.fire({
+  title: "Produk berhasil ditambahkan ke keranjang!",
+  icon: "success"
+});
+
+}
 </script>
 @endsection

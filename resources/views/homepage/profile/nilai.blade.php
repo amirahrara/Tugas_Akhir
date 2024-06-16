@@ -90,7 +90,8 @@
         border: 1px solid #000000;
         /* border-radius: 5px; */
         transition: background-color 0.3s;
-
+        align-items: center;
+        justify-content: flex-start;
     }
 
     .list-group-item:hover {
@@ -119,19 +120,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <a class="list-group-item disabled" style="margin-bottom: 20px; " aria-disabled="true">
-                        <img src="/assets/img/icon/maleuser.png" style="height:60px;" alt=""><span><b>{{auth()->user()->nama_depan}} {{auth()->user()->nama_belakang}}</b><br>&emsp; {{auth()->user()->email}}</span></a>
+                    <a class="list-group-item disabled mb-4" >
+                        <div class="d-flex align-items-center">
+                            <img src="/assets/img/icon/maleuser.png" style="height: 60px;" alt="">
+                            <div class="ms-3">
+                                <span><b>{{ auth()->user()->nama_depan }} {{ auth()->user()->nama_belakang }}</b></span><br>
+                                <span>{{ auth()->user()->email }}</span>
+                            </div>
+                        </div>
+                    </a>
                     <div class="list-group">
-                        <a href="{{route('informasi')}}" class="list-group-item" >
-                            <img src="/assets/img/icon/customer.png" style="height:60px;" alt="">
-                        <b>Informasi Akun</b>
+                        <a href="{{ route('informasi') }}" class="list-group-item">
+                            <img src="/assets/img/icon/customer.png" style="height: 60px;" alt="">
+                            <b>Informasi Akun</b>
                         </a>
-                        <a href="{{route('alamat')}}" class="list-group-item " aria-current="true">
-                            <img src="/assets/img/icon/alamat.png" style="height:60px;" alt=""><b>Alamat</b></a>
-                        <a href="{{route('pesanan')}}" class="list-group-item active">
-                            <img src="/assets/img/icon/pesanan.png" style="height:60px;" alt=""><b>Pesanan Saya</b></a>
+                        <a href="{{ route('alamat') }}" class="list-group-item" aria-current="true">
+                            <img src="/assets/img/icon/alamat.png" style="height: 60px;" alt="">
+                            <b>Alamat</b>
+                        </a>
+                        <a href="{{ route('pesanan') }}" class="list-group-item active">
+                            <img src="/assets/img/icon/pesanan.png" style="height: 60px;" alt="">
+                            <b>Pesanan Saya</b>
+                        </a>
                         {{-- <a href="#" class="list-group-item">
-                            <img src="/assets/img/icon/keluar.png" style="height:60px;" alt="">  <b>Keluar</b></a> --}}
+                            <img src="/assets/img/icon/keluar.png" style="height: 60px;" alt="">
+                            <b>Keluar</b>
+                        </a> --}}
                     </div>
                 </div>
                 <style>
@@ -220,7 +234,7 @@
                                     @enderror
                                     </div>
                                     <div class="col-md-4 mt-3">
-                                        <button type="submit" class="site-btn">Simpan</button>
+                                        <button type="submit" class="site-btn" onclick="confirmSimpan()">Simpan</button>
                                     </div>
                                 </div>
                             </div>
@@ -229,6 +243,16 @@
             </div>
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript">
+    function confirmSimpan(){
+        Swal.fire({
+      title: "Penilaian Anda Tersimpan!",
+      icon: "success"
+    });
 
+    }
+
+    </script>
 @endsection
 
